@@ -3,7 +3,7 @@ package com.asa.asasafety.Object;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Worker {
+public class Worker extends ApiObject {
     private String cardId;
     private String helmetId;
     private String name;
@@ -22,7 +22,7 @@ public class Worker {
     }
 
     public Worker() {
-
+        super("Worker");
     }
 
     public String getCardId() {

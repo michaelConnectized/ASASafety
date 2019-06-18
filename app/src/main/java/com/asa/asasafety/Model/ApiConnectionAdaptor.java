@@ -4,14 +4,23 @@ import android.app.Activity;
 import android.content.res.Resources;
 import android.util.Log;
 
+import com.asa.asasafety.Object.Alert;
+import com.asa.asasafety.Object.ApiObject;
 import com.asa.asasafety.Object.DangerZone;
+import com.asa.asasafety.Object.Worker;
 import com.asa.asasafety.R;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
+import java.util.ListIterator;
+import java.util.RandomAccess;
+import java.util.stream.Collectors;
 
 public class ApiConnectionAdaptor {
     private final String tag = "ApiConnectionAdaptor";
@@ -41,42 +50,54 @@ public class ApiConnectionAdaptor {
     }
 
     public List<DangerZone> getDangerZoneList(String postData) {
-        List<DangerZone> dangerZoneList = new ArrayList<>();;
         String resultJson = tryExecuteAndGetFromServer(getDangerZoneListUrl, postData);
-        if (isSuccess(resultJson)) {
-            try {
-                JSONObject jsonObject = new JSONObject(resultJson);
-                JSONArray dangerZonesJson = jsonObject.getJSONArray("dangerZones");
-                for (int i=0; i<dangerZonesJson.length(); i++) {
-                    dangerZoneList.add(DangerZone.GetDangerZoneFromJson(dangerZonesJson.get(i).toString()));
-                }
-            } catch (Exception e) {
-                dangerZoneList = new ArrayList<>();
-            }
-        } else {
-            dangerZoneList = new ArrayList<>();
-        }
-        return dangerZoneList;
+        List<ApiObject> apiObjectList = tryJsonToApiObjectList("dangerZones", resultJson);
+        return (List<DangerZone>)(List<?>)apiObjectList;
     }
 
-    public String getDangerZoneListDelta(String postData) {
-        return tryExecuteAndGetFromServer(getDangerZoneListUrl, postData);
+    public List<DangerZone> getDangerZoneListDelta(String postData) {
+        return getDangerZoneList(postData);
     }
 
-    public String getCurrentWorkerList(String postData) {
-        return tryExecuteAndGetFromServer(getCurrentWorkerListUrl, postData);
+    public List<Worker> getCurrentWorkerList(String postData) {
+        String resultJson = tryExecuteAndGetFromServer(getCurrentWorkerListUrl, postData);
+        List<ApiObject> apiObjectList = tryJsonToApiObjectList("workers", resultJson);
+        return (List<Worker>)(List<?>)apiObjectList;
     }
 
-    public String getCurrentWorkerListDelta(String postData) {
-        return tryExecuteAndGetFromServer(getCurrentWorkerListUrl, postData);
+    public List<Worker> getCurrentWorkerListDelta(String postData) {
+        return getCurrentWorkerList(postData);
     }
 
     public String addAlert(String postData) {
-        return tryExecuteAndGetFromServer(addAlertUrl, postData);
+        String resultJson = tryExecuteAndGetFromServer(addAlertUrl, postData);
+        return resultJson;
     }
 
-    public String getAlerts(String postData) {
-        return tryExecuteAndGetFromServer(getAlertsUrl, postData);
+    public List<Alert> getAlerts(String postData) {
+        String resultJson = tryExecuteAndGetFromServer(getAlertsUrl, postData);
+        List<ApiObject> apiObjectList = tryJsonToApiObjectList("alertList", resultJson);
+        return (List<Alert>)(List<?>)apiObjectList;
+    }
+
+    private List<ApiObject> tryJsonToApiObjectList(String apiJsonName, String json) {
+        try {
+            return jsonToApiObjectList(apiJsonName, json);
+        } catch (JSONException e) {
+            return new ArrayList<>();
+        }
+    }
+
+    private List<ApiObject> jsonToApiObjectList(String apiJsonName, String json) throws JSONException {
+        List<ApiObject> apiObjectList = new ArrayList<>();;
+        if (isSuccess(json)) {
+            JSONObject jsonObject = new JSONObject(json);
+            JSONArray apiObjectsJson = jsonObject.getJSONArray(apiJsonName);
+            for (int i=0; i<apiObjectsJson.length(); i++) {
+                apiObjectList.add(DangerZone.GetDangerZoneFromJson(apiObjectsJson.get(i).toString()));
+            }
+        }
+        return apiObjectList;
     }
 
     public boolean isSuccess(String json) {

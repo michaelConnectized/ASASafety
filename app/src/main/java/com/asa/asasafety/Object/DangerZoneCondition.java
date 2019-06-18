@@ -3,7 +3,7 @@ package com.asa.asasafety.Object;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class DangerZoneCondition {
+public class DangerZoneCondition extends ApiObject {
     private String hubid;
     private String op;
     private int rssi;
@@ -17,12 +17,8 @@ public class DangerZoneCondition {
         return resultDangerZoneCondition;
     }
 
-    public DangerZoneCondition() {}
-
-    public DangerZoneCondition(String hubid, String op, int rssi) {
-        this.hubid = hubid;
-        this.op = op;
-        this.rssi = rssi;
+    public DangerZoneCondition() {
+        super("Condition");
     }
 
     public String getHubid() {

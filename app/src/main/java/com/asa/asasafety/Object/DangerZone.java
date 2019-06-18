@@ -9,7 +9,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DangerZone {
+public class DangerZone extends ApiObject {
     private String id;
     private String name;
     private List<DangerZoneCondition> conditions;
@@ -45,16 +45,7 @@ public class DangerZone {
     }
 
     public DangerZone() {
-
-    }
-
-    public DangerZone(String id, String name, List<DangerZoneCondition> conditions, List<String> disallowTradeCodes, List<String> disallowWorkerCardIds, String lastUpdated) {
-        this.id = id;
-        this.name = name;
-        this.conditions = conditions;
-        this.disallowTradeCodes = disallowTradeCodes;
-        this.disallowWorkerCardIds = disallowWorkerCardIds;
-        this.lastUpdated = lastUpdated;
+        super("dangerZones");
     }
 
     public String getId() {

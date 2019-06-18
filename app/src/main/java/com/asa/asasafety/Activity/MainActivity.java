@@ -1,9 +1,5 @@
 package com.asa.asasafety.Activity;
 
-import android.content.Context;
-import android.net.MacAddress;
-import android.net.wifi.WifiInfo;
-import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,8 +13,7 @@ import android.widget.TextView;
 
 import com.asa.asasafety.MacAddress.MacAddressManager;
 import com.asa.asasafety.Model.ApiConnectionAdaptor;
-import com.asa.asasafety.MokoSupportAdaptor.MokoSupportAdaptor;
-import com.asa.asasafety.Object.DangerZone;
+import com.asa.asasafety.MokoSupportAdaptor.MokoSupportManager;
 import com.asa.asasafety.ObjectManager.SafetyObjectManager;
 import com.asa.asasafety.R;
 import com.asa.asasafety.utils.Utils;
@@ -28,9 +23,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private TextView tv_bt;
-    private MokoSupportAdaptor mokotAdaptor;
     private DeviceInfo targetDevice;
     private ApiConnectionAdaptor apiConnectionAdaptor;
+    private MokoSupportManager mokoManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
         initView();
         initVar();
-        mokotAdaptor.startService();
     }
 
     public void defaultInit() {
@@ -62,59 +56,38 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void initVar() {
-        mokotAdaptor = new MokoSupportAdaptor(this);
+        mokoManager = new MokoSupportManager(this);
         apiConnectionAdaptor = new ApiConnectionAdaptor(this.getResources());
-//        SafetyObjectManager.setDangerZoneList(apiConnectionAdaptor.getDangerZoneList("{\n" +
-//                "\t\"projectId\": \"58d34ce8143b73986de6eba2\"\n" +
-//                "}"));
-//        Log.e("AsaSafety", apiConnectionAdaptor.getDangerZoneList("{\n" +
-//                "\t\"projectId\": \"58d34ce8143b73986de6eba2\"\n" +
-//                "}"));
-        //Log.e("asasafety", SafetyObjectManager.getDangerZoneList().toString());
+        SafetyObjectManager.setDangerZoneList(apiConnectionAdaptor.getDangerZoneList("{\n" +
+                "\t\"projectId\": \"58d34ce8143b73986de6eba2\"\n" +
+                "}"));
+
+        Log.e("asasafety", SafetyObjectManager.getDangerZoneList().toString());
 
     }
 
-
-
-
-
     public void start(View view) {
-        if (!mokotAdaptor.isBluetoothOn()) {
-            mokotAdaptor.requestTurnOnBluetooth(this);
-            tv_bt.setText("Ask for Bluetooth");
-        } else {
-            if (mokotAdaptor.startScan()) {
-                tv_bt.setText("Scanning");
-            }
+        if (mokoManager.startScan()) {
+            tv_bt.setText("Scanning...");
         }
     }
 
     public void stop(View view) {
-        mokotAdaptor.stopScan();
+        mokoManager.stopScan();
         tv_bt.setText("Stopped");
     }
 
     public void update(View view) {
-        List<DeviceInfo> deviceInfos = mokotAdaptor.getDeviceInfoList();
-        String item = "E4:64:8E:54:34:EF is not found!\n";
-        for (int i=0; i<deviceInfos.size(); i++) {
-            if (deviceInfos.get(i).mac.equals("E4:64:8E:54:34:EF")) {
-                item = "E4:64:8E:54:34:EF is found!\n";
-                targetDevice = deviceInfos.get(i);
-                break;
-            }
-        }
-        tv_bt.setText(item);
+        tv_bt.setText(String.valueOf(mokoManager.getDeviceInfoList().size()));
     }
 
     public void Connect(View view) {
-        mokotAdaptor.connectDevice(targetDevice);
-        tv_bt.setText("Connecting...");
+        mokoManager.setLedRequest();
+        mokoManager.sendAllRequestsToAllDevices();
     }
 
     public void Disconnect(View view) {
-        mokotAdaptor.disconnectDevice();
-        tv_bt.setText("Disconnecting...");
+        tv_bt.setText(mokoManager.getDeviceInfoList().get(0).mac);
     }
 
     public void Lighting(View view) {

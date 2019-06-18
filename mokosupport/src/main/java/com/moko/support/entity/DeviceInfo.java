@@ -25,4 +25,13 @@ public class DeviceInfo implements Serializable {
                 ", mac='" + mac + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object object) {
+        boolean isSame = false;
+        if (object instanceof DeviceInfo) {
+            isSame = this.mac.equals(((DeviceInfo) object).mac);
+        }
+        return isSame;
+    }
 }

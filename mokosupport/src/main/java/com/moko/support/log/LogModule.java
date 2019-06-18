@@ -44,7 +44,7 @@ public class LogModule {
                 .tag(TAG)
                 .logLevel(LogLevel.ALL)
                 .build();
-        XLog.init(config, new AndroidPrinter(), filePrinter);
+        //XLog.init(config, new AndroidPrinter(), filePrinter);
     }
 
     public static void v(String msg) {

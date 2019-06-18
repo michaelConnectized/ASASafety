@@ -3,7 +3,7 @@ package com.asa.asasafety.Object;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Alert {
+public class Alert extends ApiObject {
     private String deviceId;
     private String workerId;
     private String issueMessage;
@@ -20,7 +20,7 @@ public class Alert {
     }
 
     public Alert() {
-
+        super("Alert");
     }
 
     public String getDeviceId() {

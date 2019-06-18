@@ -10,12 +10,14 @@ import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.util.Log;
+import android.util.StateSet;
 
 import com.moko.support.MokoConstants;
 import com.moko.support.MokoSupport;
 import com.moko.support.callback.MokoScanDeviceCallback;
 import com.moko.support.entity.DeviceInfo;
 import com.asa.asasafety.service.MokoService;
+import com.moko.support.task.OrderTask;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,16 +25,37 @@ import java.util.List;
 import static android.content.Context.BIND_AUTO_CREATE;
 
 public class MokoSupportAdaptor implements MokoScanDeviceCallback {
+    public enum Status {
+        CONNECT_SUCCESS,
+        READY_TO_SEND,
+        DISCONNECTED
+    }
+
     private MokoService mokoService;
     private List<DeviceInfo> deviceInfoList;
+    private List<OrderTask> requestList;
     private Activity activity;
+    private Status status;
+    private onStatusChangedListener listener;
 
-    MokoSupport mokoSupport;
+
     public MokoSupportAdaptor(Activity activity) {
         super();
         this.activity = activity;
         MokoSupport.getInstance().init(activity);
+        status = Status.DISCONNECTED;
+
+       // macList.add("FE:DD:5D:0F:DF:0E");
     }
+
+    public interface onStatusChangedListener {
+        void onStatusChanged(Status status);
+    }
+
+    public void setOnStatusChangedListener(onStatusChangedListener eventListener) {
+        listener = eventListener;
+    }
+
 
     public void startService() {
         Intent intent = new Intent(activity, MokoService.class);
@@ -83,12 +106,20 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
         }, 1000);
     }
 
-    public void sendLedRequest(int time_second) {
-        mokoService.sendOrder(mokoService.setLEDInfo(true, true, time_second*1000, 25000, 50));
+    public void initRequest() {
+        requestList = new ArrayList<>();
     }
 
-    public void sendTurnOffRequest() {
-        mokoService.sendOrder(mokoService.setClose());
+    public void setLedRequest(int time_second) {
+        requestList.add(mokoService.setLEDInfo(true, true, time_second*1000, 25000, 50));
+    }
+
+    public void setTurnOffRequest() {
+        requestList.add(mokoService.setClose());
+    }
+
+    public void sendRequest() {
+        mokoService.sendOrder(requestList.toArray(new OrderTask[requestList.size()]));
     }
 
     @Override
@@ -98,6 +129,7 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
 
     @Override
     public void onScanDevice(DeviceInfo deviceInfo) {
+        Log.d("asasafety", deviceInfo.mac);
         if (!deviceInfoList.contains(deviceInfo))
             deviceInfoList.add(deviceInfo);
     }
@@ -138,21 +170,22 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
                 String action = intent.getAction();
                 if (MokoConstants.ACTION_CONNECT_SUCCESS.equals(action)) {
                     sendGetLockStatusRequest();
+                    setStatus(Status.CONNECT_SUCCESS);
                 }
                 if (MokoConstants.ACTION_CONNECT_DISCONNECTED.equals(action)) {
                     Log.e("asasafety", "ACTION_CONNECT_DISCONNECTED");
+                    setStatus(Status.DISCONNECTED);
                 }
                 if (MokoConstants.ACTION_RESPONSE_TIMEOUT.equals(action)) {
                     Log.e("asasafety", "ACTION_RESPONSE_TIMEOUT");
+                    setStatus(Status.DISCONNECTED);
                 }
                 if (MokoConstants.ACTION_RESPONSE_FINISH.equals(action)) {
                     Log.e("asasafety", "ACTION_RESPONSE_FINISH");
                 }
                 if (MokoConstants.ACTION_RESPONSE_SUCCESS.equals(action)) {
                     Log.e("asasafety", "ACTION_RESPONSE_SUCCESS");
-                    sendTurnOffRequest();
-                    //sendLedRequest(30);
-                    disconnectDevice();
+                    setStatus(Status.READY_TO_SEND);
                 }
                 if (BluetoothAdapter.ACTION_STATE_CHANGED.equals(action)) {
                     Log.e("asasafety", "ACTION_STATE_CHANGED");
@@ -160,4 +193,9 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
             }
         }
     };
+
+    private void setStatus(Status status) {
+        this.status = status;
+        listener.onStatusChanged(status);
+    }
 }

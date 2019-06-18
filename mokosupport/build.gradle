@@ -15,6 +15,9 @@ android {
             minifyEnabled false
         }
     }
+    compileOptions {
+        targetCompatibility = '1.8'
+    }
 }
 
 dependencies {
