@@ -56,7 +56,6 @@ public class ApiConnectionAdaptor {
         } else {
             dangerZoneList = new ArrayList<>();
         }
-        JSONObject jsonObject = new JSONObject();
         return dangerZoneList;
     }
 
