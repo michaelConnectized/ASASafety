@@ -2,6 +2,7 @@ package com.moko.support.log;
 
 import android.content.Context;
 import android.os.Environment;
+import android.util.Log;
 
 import com.elvishew.xlog.LogConfiguration;
 import com.elvishew.xlog.LogLevel;
@@ -47,22 +48,22 @@ public class LogModule {
     }
 
     public static void v(String msg) {
-        XLog.v(msg);
+        Log.v(TAG, msg);
     }
 
     public static void d(String msg) {
-        XLog.d(msg);
+        Log.d(TAG, msg);
     }
 
     public static void i(String msg) {
-        XLog.i(msg);
+        Log.i(TAG, msg);
     }
 
     public static void w(String msg) {
-        XLog.w(msg);
+        Log.w(TAG, msg);
     }
 
     public static void e(String msg) {
-        XLog.e(msg);
+        Log.e(TAG, msg);
     }
 }

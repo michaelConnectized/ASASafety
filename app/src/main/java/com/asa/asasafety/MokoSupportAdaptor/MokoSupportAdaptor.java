@@ -87,7 +87,9 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
         mokoService.sendOrder(mokoService.setLEDInfo(true, true, time_second*1000, 25000, 50));
     }
 
-
+    public void sendTurnOffRequest() {
+        mokoService.sendOrder(mokoService.setClose());
+    }
 
     @Override
     public void onStartScan() {
@@ -148,7 +150,8 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
                 }
                 if (MokoConstants.ACTION_RESPONSE_SUCCESS.equals(action)) {
                     Log.e("asasafety", "ACTION_RESPONSE_SUCCESS");
-                    sendLedRequest(30);
+                    sendTurnOffRequest();
+                    //sendLedRequest(30);
                     disconnectDevice();
                 }
                 if (BluetoothAdapter.ACTION_STATE_CHANGED.equals(action)) {

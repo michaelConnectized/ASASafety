@@ -1,17 +1,27 @@
 package com.asa.asasafety.Activity;
 
+import android.content.Context;
+import android.net.MacAddress;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.asa.asasafety.MacAddress.MacAddressManager;
+import com.asa.asasafety.Model.ApiConnectionAdaptor;
 import com.asa.asasafety.MokoSupportAdaptor.MokoSupportAdaptor;
+import com.asa.asasafety.Object.DangerZone;
+import com.asa.asasafety.ObjectManager.SafetyObjectManager;
 import com.asa.asasafety.R;
+import com.asa.asasafety.utils.Utils;
 import com.moko.support.entity.DeviceInfo;
 
 import java.util.List;
@@ -20,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView tv_bt;
     private MokoSupportAdaptor mokotAdaptor;
     private DeviceInfo targetDevice;
+    private ApiConnectionAdaptor apiConnectionAdaptor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +63,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void initVar() {
         mokotAdaptor = new MokoSupportAdaptor(this);
+        apiConnectionAdaptor = new ApiConnectionAdaptor(this.getResources());
+//        SafetyObjectManager.setDangerZoneList(apiConnectionAdaptor.getDangerZoneList("{\n" +
+//                "\t\"projectId\": \"58d34ce8143b73986de6eba2\"\n" +
+//                "}"));
+//        Log.e("AsaSafety", apiConnectionAdaptor.getDangerZoneList("{\n" +
+//                "\t\"projectId\": \"58d34ce8143b73986de6eba2\"\n" +
+//                "}"));
+        //Log.e("asasafety", SafetyObjectManager.getDangerZoneList().toString());
+
     }
+
+
 
 
 
@@ -96,7 +118,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Lighting(View view) {
-        tv_bt.setText("lighting");
+        MacAddressManager macManager = new MacAddressManager(this);
+        if (macManager.saveMacAddr()) {
+            Log.e("asasafety", "Mac: "+ Utils.getSharePreference(this).getString("mac", ""));
+        } else {
+            Log.e("asasafety", "Mac Saving Failed");
+        }
     }
 
     public void beDark(View view) {

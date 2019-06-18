@@ -2,10 +2,20 @@ package com.asa.asasafety.Model;
 
 import android.app.Activity;
 import android.content.res.Resources;
+import android.util.Log;
 
+import com.asa.asasafety.Object.DangerZone;
 import com.asa.asasafety.R;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class ApiConnectionAdaptor {
+    private final String tag = "ApiConnectionAdaptor";
+
     private Resources res;
     private String baseUrl;
     private String getDangerZoneListUrl;
@@ -30,8 +40,24 @@ public class ApiConnectionAdaptor {
         isHttps = res.getBoolean(R.bool.is_https);
     }
 
-    public String getDangerZoneList(String postData) {
-        return tryExecuteAndGetFromServer(getDangerZoneListUrl, postData);
+    public List<DangerZone> getDangerZoneList(String postData) {
+        List<DangerZone> dangerZoneList = new ArrayList<>();;
+        String resultJson = tryExecuteAndGetFromServer(getDangerZoneListUrl, postData);
+        if (isSuccess(resultJson)) {
+            try {
+                JSONObject jsonObject = new JSONObject(resultJson);
+                JSONArray dangerZonesJson = jsonObject.getJSONArray("dangerZones");
+                for (int i=0; i<dangerZonesJson.length(); i++) {
+                    dangerZoneList.add(DangerZone.GetDangerZoneFromJson(dangerZonesJson.get(i).toString()));
+                }
+            } catch (Exception e) {
+                dangerZoneList = new ArrayList<>();
+            }
+        } else {
+            dangerZoneList = new ArrayList<>();
+        }
+        JSONObject jsonObject = new JSONObject();
+        return dangerZoneList;
     }
 
     public String getDangerZoneListDelta(String postData) {
@@ -54,6 +80,19 @@ public class ApiConnectionAdaptor {
         return tryExecuteAndGetFromServer(getAlertsUrl, postData);
     }
 
+    public boolean isSuccess(String json) {
+        boolean success = false;
+        try {
+            JSONObject jsonObject = new JSONObject(json);
+            if (jsonObject.getString("result").equals("success")) {
+                success = true;
+            }
+        } catch (Exception e) {
+            Log.e(tag, e.toString());
+        }
+        return success;
+    }
+
     private String tryExecuteAndGetFromServer(String fullUrl, String postData) {
         String response;
         try {
@@ -72,4 +111,5 @@ public class ApiConnectionAdaptor {
             apiConnection = new HttpApiConnection(fullUrl, postData);
         return apiConnection;
     }
+
 }

@@ -1,19 +1,29 @@
 package com.asa.asasafety.utils;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Environment;
 
+import com.asa.asasafety.R;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class Utils {
 
@@ -118,5 +128,17 @@ public class Utils {
             return true;
         else
             return false;
+    }
+
+    public static List<String> jsonArrayToStringArrayList(JSONArray jsonArray) throws JSONException {
+        List<String> resultList = new ArrayList<>();
+        for (int i=0; i<jsonArray.length(); i++) {
+            resultList.add(jsonArray.get(i).toString());
+        }
+        return resultList;
+    }
+
+    public static SharedPreferences getSharePreference(Activity activity) {
+        return activity.getSharedPreferences(activity.getResources().getString(R.string.share_preference), MODE_PRIVATE);
     }
 }
