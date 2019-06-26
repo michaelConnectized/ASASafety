@@ -8,10 +8,10 @@ public class DangerZoneCondition extends ApiObject {
     private String op;
     private int rssi;
 
-    public static DangerZoneCondition GetDangerZoneConditionFromJson(String json) throws JSONException {
+    public DangerZoneCondition getObjectFromJson(String json) throws JSONException {
         DangerZoneCondition resultDangerZoneCondition = new DangerZoneCondition();
         JSONObject jsonObject = new JSONObject(json);
-        resultDangerZoneCondition.setHubid(jsonObject.getString("hubid"));
+        resultDangerZoneCondition.setHubid(jsonObject.getString("hubId"));
         resultDangerZoneCondition.setOp(jsonObject.getString("op"));
         resultDangerZoneCondition.setRssi(jsonObject.getInt("rssi"));
         return resultDangerZoneCondition;

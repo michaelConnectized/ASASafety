@@ -52,7 +52,7 @@ public class MacAddressManager {
         sp.edit().putString("mac", mac).commit();
     }
 
-    public static String getMacAddress() {
+    private static String getMacAddress() {
         try {
             List<NetworkInterface> all = Collections.list(NetworkInterface.getNetworkInterfaces());
             for (NetworkInterface nif : all) {
@@ -71,7 +71,7 @@ public class MacAddressManager {
                 if (res1.length() > 0) {
                     res1.deleteCharAt(res1.length() - 1);
                 }
-                return res1.toString();
+                return res1.toString().replace(":", "").toLowerCase();
             }
         } catch (Exception ex) {
         }

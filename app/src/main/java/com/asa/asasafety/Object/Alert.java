@@ -9,7 +9,7 @@ public class Alert extends ApiObject {
     private String issueMessage;
     private String time;
 
-    public static Alert GetAlertFromJson(String json) throws JSONException {
+    public Alert getObjectFromJson(String json) throws JSONException {
         JSONObject jsonObject = new JSONObject(json);
         Alert resultAlert = new Alert();
         resultAlert.setDeviceId(jsonObject.getString("deviceId"));

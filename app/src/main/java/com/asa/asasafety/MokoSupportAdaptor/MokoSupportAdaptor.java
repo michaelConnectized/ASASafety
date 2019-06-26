@@ -10,7 +10,6 @@ import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.util.Log;
-import android.util.StateSet;
 
 import com.moko.support.MokoConstants;
 import com.moko.support.MokoSupport;
@@ -36,24 +35,50 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
     private List<OrderTask> requestList;
     private Activity activity;
     private Status status;
-    private onStatusChangedListener listener;
-
+    private onStatusChangedListener onStatusChangedListener;
+    private onScanDeviceListener onScanDeviceListener;
 
     public MokoSupportAdaptor(Activity activity) {
         super();
         this.activity = activity;
-        MokoSupport.getInstance().init(activity);
-        status = Status.DISCONNECTED;
+        initMokoSupportApi();
+        initCurrentConnectionStatus();
+        initEmptyListener();
+    }
 
-       // macList.add("FE:DD:5D:0F:DF:0E");
+    private void initMokoSupportApi() {
+        MokoSupport.getInstance().init(activity);
+    }
+
+    private void initCurrentConnectionStatus() {
+        status = Status.DISCONNECTED;
+    }
+
+    private void initEmptyListener() {
+        onStatusChangedListener = new onStatusChangedListener() {
+            @Override
+            public void onStatusChanged(Status status) { }
+        };
+        onScanDeviceListener = new onScanDeviceListener() {
+            @Override
+            public void onScan(DeviceInfo deviceInfo) { }
+        };
     }
 
     public interface onStatusChangedListener {
         void onStatusChanged(Status status);
     }
 
+    public interface onScanDeviceListener {
+        void onScan(DeviceInfo deviceInfo);
+    }
+
     public void setOnStatusChangedListener(onStatusChangedListener eventListener) {
-        listener = eventListener;
+        onStatusChangedListener = eventListener;
+    }
+
+    public void setOnScanDeviceListener(onScanDeviceListener listener) {
+        onScanDeviceListener = listener;
     }
 
 
@@ -129,7 +154,7 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
 
     @Override
     public void onScanDevice(DeviceInfo deviceInfo) {
-        Log.d("asasafety", deviceInfo.mac);
+        onScanDeviceListener.onScan(deviceInfo);
         if (!deviceInfoList.contains(deviceInfo))
             deviceInfoList.add(deviceInfo);
     }
@@ -196,6 +221,6 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
 
     private void setStatus(Status status) {
         this.status = status;
-        listener.onStatusChanged(status);
+        onStatusChangedListener.onStatusChanged(status);
     }
 }

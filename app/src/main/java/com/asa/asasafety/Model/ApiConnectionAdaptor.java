@@ -1,6 +1,5 @@
 package com.asa.asasafety.Model;
 
-import android.app.Activity;
 import android.content.res.Resources;
 import android.util.Log;
 
@@ -15,12 +14,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
-import java.util.ListIterator;
-import java.util.RandomAccess;
-import java.util.stream.Collectors;
 
 public class ApiConnectionAdaptor {
     private final String tag = "ApiConnectionAdaptor";
@@ -51,7 +45,7 @@ public class ApiConnectionAdaptor {
 
     public List<DangerZone> getDangerZoneList(String postData) {
         String resultJson = tryExecuteAndGetFromServer(getDangerZoneListUrl, postData);
-        List<ApiObject> apiObjectList = tryJsonToApiObjectList("dangerZones", resultJson);
+        List<ApiObject> apiObjectList = tryJsonToApiObjectList("dangerZones", resultJson, new DangerZone());
         return (List<DangerZone>)(List<?>)apiObjectList;
     }
 
@@ -61,7 +55,7 @@ public class ApiConnectionAdaptor {
 
     public List<Worker> getCurrentWorkerList(String postData) {
         String resultJson = tryExecuteAndGetFromServer(getCurrentWorkerListUrl, postData);
-        List<ApiObject> apiObjectList = tryJsonToApiObjectList("workers", resultJson);
+        List<ApiObject> apiObjectList = tryJsonToApiObjectList("workers", resultJson, new Worker());
         return (List<Worker>)(List<?>)apiObjectList;
     }
 
@@ -76,25 +70,26 @@ public class ApiConnectionAdaptor {
 
     public List<Alert> getAlerts(String postData) {
         String resultJson = tryExecuteAndGetFromServer(getAlertsUrl, postData);
-        List<ApiObject> apiObjectList = tryJsonToApiObjectList("alertList", resultJson);
+        List<ApiObject> apiObjectList = tryJsonToApiObjectList("alertList", resultJson, new Alert());
         return (List<Alert>)(List<?>)apiObjectList;
     }
 
-    private List<ApiObject> tryJsonToApiObjectList(String apiJsonName, String json) {
+    private List<ApiObject> tryJsonToApiObjectList(String apiJsonName, String json, ApiObject objClass) {
         try {
-            return jsonToApiObjectList(apiJsonName, json);
+            return jsonToApiObjectList(apiJsonName, json, objClass);
         } catch (JSONException e) {
+            Log.e(tag, e.toString());
             return new ArrayList<>();
         }
     }
 
-    private List<ApiObject> jsonToApiObjectList(String apiJsonName, String json) throws JSONException {
+    private List<ApiObject> jsonToApiObjectList(String apiJsonName, String json, ApiObject objClass) throws JSONException {
         List<ApiObject> apiObjectList = new ArrayList<>();;
         if (isSuccess(json)) {
             JSONObject jsonObject = new JSONObject(json);
             JSONArray apiObjectsJson = jsonObject.getJSONArray(apiJsonName);
             for (int i=0; i<apiObjectsJson.length(); i++) {
-                apiObjectList.add(DangerZone.GetDangerZoneFromJson(apiObjectsJson.get(i).toString()));
+                apiObjectList.add(objClass.getObjectFromJson(apiObjectsJson.get(i).toString()));
             }
         }
         return apiObjectList;
@@ -132,4 +127,7 @@ public class ApiConnectionAdaptor {
         return apiConnection;
     }
 
+    public static void sendAlertsToServer() {
+        //TODO
+    }
 }

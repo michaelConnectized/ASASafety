@@ -1,5 +1,7 @@
 package com.asa.asasafety.Model;
 
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
@@ -10,6 +12,8 @@ import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 
 public class HttpsApiConnection extends ApiConnection{
+    private final String tag = "HttpApiConnection";
+
     public HttpsApiConnection(String fullUrl, String postData) {
         super(fullUrl, postData);
     }
@@ -43,6 +47,7 @@ public class HttpsApiConnection extends ApiConnection{
                 urlConnection.disconnect();
             }
         } catch (Exception e) {
+            Log.e(tag, e.toString());
         }
         return response.toString();
     }

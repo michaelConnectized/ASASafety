@@ -1,5 +1,7 @@
 package com.asa.asasafety.Object;
 
+import android.util.Log;
+
 import com.asa.asasafety.utils.Utils;
 
 import org.json.JSONArray;
@@ -17,7 +19,7 @@ public class DangerZone extends ApiObject {
     private List<String> disallowWorkerCardIds;
     private String lastUpdated;
 
-    public static DangerZone GetDangerZoneFromJson(String json) throws JSONException {
+    public DangerZone getObjectFromJson(String json) throws JSONException {
         JSONObject jsonObject = new JSONObject(json);
         DangerZone resultDangerZone = new DangerZone();
 
@@ -27,7 +29,7 @@ public class DangerZone extends ApiObject {
 
         JSONArray conditionsJsonArray = jsonObject.getJSONArray("conditions");
         for (int i=0; i<conditionsJsonArray.length(); i++) {
-            conditions.add(DangerZoneCondition.GetDangerZoneConditionFromJson(conditionsJsonArray.get(i).toString()));
+            conditions.add(new DangerZoneCondition().getObjectFromJson(conditionsJsonArray.get(i).toString()));
         }
 
         List<String> disallowTradeCodes = Utils.jsonArrayToStringArrayList(jsonObject.getJSONArray("disallowTradeCodes"));

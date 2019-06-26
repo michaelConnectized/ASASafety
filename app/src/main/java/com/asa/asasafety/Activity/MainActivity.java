@@ -16,16 +16,22 @@ import com.asa.asasafety.Model.ApiConnectionAdaptor;
 import com.asa.asasafety.MokoSupportAdaptor.MokoSupportManager;
 import com.asa.asasafety.ObjectManager.SafetyObjectManager;
 import com.asa.asasafety.R;
+import com.asa.asasafety.Thread.CentralTimerThread;
+import com.asa.asasafety.Thread.TimerEvent.AlertSmartagEvent;
+import com.asa.asasafety.Thread.TimerEvent.GetDangerZoneEvent;
 import com.asa.asasafety.utils.Utils;
 import com.moko.support.entity.DeviceInfo;
 
-import java.util.List;
+import org.json.JSONException;
 
 public class MainActivity extends AppCompatActivity {
+    private int ledLightingTime = 30;
+
     private TextView tv_bt;
     private DeviceInfo targetDevice;
     private ApiConnectionAdaptor apiConnectionAdaptor;
     private MokoSupportManager mokoManager;
+    private CentralTimerThread centralTimerThread;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +41,14 @@ public class MainActivity extends AppCompatActivity {
 
         initView();
         initVar();
+        try {
+            initTimeEvent();
+            SafetyObjectManager.checkAndInitList();
+            mokoManager.setLedRequest(ledLightingTime);
+            mokoManager.startScan();
+        } catch (Exception e) {
+
+        }
     }
 
     public void defaultInit() {
@@ -58,32 +72,32 @@ public class MainActivity extends AppCompatActivity {
     public void initVar() {
         mokoManager = new MokoSupportManager(this);
         apiConnectionAdaptor = new ApiConnectionAdaptor(this.getResources());
-        SafetyObjectManager.setDangerZoneList(apiConnectionAdaptor.getDangerZoneList("{\n" +
-                "\t\"projectId\": \"58d34ce8143b73986de6eba2\"\n" +
-                "}"));
+        centralTimerThread = new CentralTimerThread();
+    }
 
-        Log.e("asasafety", SafetyObjectManager.getDangerZoneList().toString());
-
+    public void initTimeEvent() throws JSONException {
+        centralTimerThread.startThread();
+        centralTimerThread.applyTimerEvent(new GetDangerZoneEvent(this));
+        centralTimerThread.applyTimerEvent(new AlertSmartagEvent(mokoManager));
+//        JSONObject tmpJsonObject = new JSONObject();
+//        tmpJsonObject.put("deviceId", Utils.getSharePreference(this).getString("mac", ""));
+//        SafetyObjectManager.setDangerZoneList(apiConnectionAdaptor.getDangerZoneList(tmpJsonObject.toString()));
+//
+//        Log.e("asasafety", tmpJsonObject.toString());
+        //Log.e("asasafety", SafetyObjectManager.getDangerZoneList().toString());
     }
 
     public void start(View view) {
-        if (mokoManager.startScan()) {
-            tv_bt.setText("Scanning...");
-        }
     }
 
     public void stop(View view) {
-        mokoManager.stopScan();
-        tv_bt.setText("Stopped");
     }
 
     public void update(View view) {
-        tv_bt.setText(String.valueOf(mokoManager.getDeviceInfoList().size()));
     }
 
     public void Connect(View view) {
-        mokoManager.setLedRequest();
-        mokoManager.sendAllRequestsToAllDevices();
+
     }
 
     public void Disconnect(View view) {

@@ -3,8 +3,8 @@
     <string name="share_preference">ASASafety</string>
     <string name="action_settings">Settings</string>
     <string name="api_base_url">http://42.200.149.215:9860/safety/api</string>
-    <string name="get_danger_zone_list_url">/getDangerZoneList</string>
-    <string name="get_current_worker_list_url">/getCurrentWorkerList</string>
-    <string name="add_alert_url">/addAlert</string>
-    <string name="get_alerts_url">/getAlerts</string>
+    <string name="get_danger_zone_list_url">/getDangerZoneListWithDev</string>
+    <string name="get_current_worker_list_url">/getCurrentWorkerListWithDev</string>
+    <string name="add_alert_url">/addAlertWithDev</string>
+    <string name="get_alerts_url">/getAlertsWithDev</string>
 </resources>

@@ -10,7 +10,7 @@ public class Worker extends ApiObject {
     private String tradeCode;
     private String checkinTime;
 
-    public static Worker GetWorkerFromJson(String json) throws JSONException {
+    public Worker getObjectFromJson(String json) throws JSONException {
         JSONObject jsonObject = new JSONObject(json);
         Worker resultWorker = new Worker();
         resultWorker.setCardId(jsonObject.getString("cardId"));
