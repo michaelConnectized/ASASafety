@@ -42,6 +42,8 @@ public class HttpsApiConnection extends ApiConnection{
                     while ((line=br.readLine()) != null) {
                         response.append(line);
                     }
+                } else {
+                    Log.e(tag, "ResponseCode: "+responseCode);
                 }
             } finally {
                 urlConnection.disconnect();

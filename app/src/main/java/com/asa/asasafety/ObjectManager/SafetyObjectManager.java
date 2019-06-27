@@ -1,14 +1,19 @@
 package com.asa.asasafety.ObjectManager;
 
+import android.util.Log;
+
+import com.asa.asasafety.MacAddress.MacAddressManager;
 import com.asa.asasafety.Object.DangerZone;
 import com.asa.asasafety.Object.DangerZoneCondition;
 import com.asa.asasafety.Object.Smartag;
 import com.asa.asasafety.Object.SmartagFactory;
 import com.asa.asasafety.Object.VirtualSmartag;
 import com.asa.asasafety.Object.Worker;
+import com.asa.asasafety.utils.Utils;
 import com.moko.support.entity.DeviceInfo;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class SafetyObjectManager {
@@ -19,6 +24,7 @@ public class SafetyObjectManager {
     public static List<Smartag> smartagsInDangerZone;
     public static List<Smartag> filteredSmartags;
     public static List<VirtualSmartag> filteredVirtualSmartags;
+    public static String workerLastUpdated;
 
 
     public static void minorRemainLightingTimeByOne() {
@@ -42,14 +48,13 @@ public class SafetyObjectManager {
     }
 
     public static void removeOldSmartagRecords() {
-        int listSize = filteredSmartags.size();
-        for (int i=0; i<listSize; i++) {
-            boolean isNoConnectionTimes = filteredSmartags.get(i).getRemainConnectionTimes()<=0;
-            boolean isNoLightingEndTime = filteredSmartags.get(i).getRemainLightingEndTime()<=0;
+        Iterator<Smartag> smartags = filteredSmartags.iterator();
+        while (smartags.hasNext()) {
+            Smartag smartag = smartags.next();
+            boolean isNoConnectionTimes = smartag.getRemainConnectionTimes()<=0;
+            boolean isNoLightingEndTime = smartag.getRemainLightingEndTime()<=0;
             if (isNoConnectionTimes||isNoLightingEndTime) {
-                filteredSmartags.remove(i);
-                listSize--;
-                i--;
+                smartags.remove();
             }
         }
     }
@@ -79,7 +84,7 @@ public class SafetyObjectManager {
         }
     }
 
-    public static boolean isFitDangerZone(DeviceInfo deviceInfo) {
+    public static boolean isFitDangerZone(DeviceInfo deviceInfo, String localMacAddress) {
         boolean isFitDangerZone = false;
         boolean isTargetSmartag;
         boolean isFitRssiConditions;
@@ -87,10 +92,11 @@ public class SafetyObjectManager {
 
         for (DangerZone dangerZone:dangerZoneList) {
             isTargetSmartag = isInDisallowTradeCodes(dangerZone, deviceInfo) || isInDisallowWorkerCardIds(dangerZone, deviceInfo);
-            isFitRssiConditions = isFitRssiConditions(dangerZone, deviceInfo);
+            isFitRssiConditions = isFitRssiConditions(dangerZone, deviceInfo, localMacAddress);
             isInScanTime = isScanTime(dangerZone);
             isFitDangerZone = isTargetSmartag && isFitRssiConditions && isInScanTime;
             if (isFitDangerZone) {
+                deviceInfo.issueMessage += ", Mac: "+deviceInfo.mac + ", Zone Name: "+dangerZone.getName();
                 break;
             }
         }
@@ -102,6 +108,7 @@ public class SafetyObjectManager {
         for (String tradeCode:dangerZone.getDisallowTradeCodes()) {
             if (tradeCode.equals(getTradeCode(deviceInfo))) {
                 isInDisallowTradeCodes = true;
+                deviceInfo.issueMessage = "In Disallow Trade Codes: "+tradeCode;
                 break;
             }
         }
@@ -111,7 +118,7 @@ public class SafetyObjectManager {
     private static String getTradeCode(DeviceInfo deviceInfo) {
         String tradeCode = "N/A";
         for (Worker worker:workerList) {
-            if (worker.getHelmetId().equals(deviceInfo.mac)) {
+            if (worker.getHelmetId().equals(deviceInfo.getMacShortForm())) {
                 tradeCode = worker.getTradeCode();
                 break;
             }
@@ -124,16 +131,17 @@ public class SafetyObjectManager {
         for (String workerCardId:dangerZone.getDisallowWorkerCardIds()) {
             if (workerCardId.equals(getWorkerCardId(deviceInfo))) {
                 isInDisallowWorkerCardIds = true;
+                deviceInfo.issueMessage = "Disallow Worker Card Id: "+workerCardId;
                 break;
             }
         }
         return isInDisallowWorkerCardIds;
     }
 
-    private static String getWorkerCardId(DeviceInfo deviceInfo) {
+    public static String getWorkerCardId(DeviceInfo deviceInfo) {
         String workerCardId = "N/A";
         for (Worker worker:workerList) {
-            if (worker.getHelmetId().equals(deviceInfo.mac)) {
+            if (worker.getHelmetId().equals(deviceInfo.getMacShortForm())) {
                 workerCardId = worker.getCardId();
                 break;
             }
@@ -141,22 +149,25 @@ public class SafetyObjectManager {
         return workerCardId;
     }
 
-    private static boolean isFitRssiConditions(DangerZone dangerZone, DeviceInfo deviceInfo) {
+    private static boolean isFitRssiConditions(DangerZone dangerZone, DeviceInfo deviceInfo, String localMacAddress) {
         boolean isFitRssiConditions = false;
-        for (DangerZoneCondition condition:getMatchedConditions(dangerZone.getConditions(), deviceInfo)) {
+        for (DangerZoneCondition condition:getMatchedConditions(dangerZone.getConditions(), localMacAddress)) {
             switch (condition.getOp()) {
                 case "gte": isFitRssiConditions = deviceInfo.rssi >= condition.getRssi(); break;
                 case "lte": isFitRssiConditions = deviceInfo.rssi <= condition.getRssi(); break;
             }
-            if (isFitRssiConditions) break;
+            if (isFitRssiConditions) {
+                deviceInfo.issueMessage += ", "+condition.getOp()+" "+condition.getRssi();
+                break;
+            }
         }
         return isFitRssiConditions;
     }
 
-    private static List<DangerZoneCondition> getMatchedConditions(List<DangerZoneCondition> conditions, DeviceInfo deviceInfo) {
+    private static List<DangerZoneCondition> getMatchedConditions(List<DangerZoneCondition> conditions, String localMacAddress) {
         List<DangerZoneCondition> matchedConditions = new ArrayList<>();
         for (DangerZoneCondition condition:conditions) {
-            if (condition.getHubid().equals(deviceInfo.mac)) {
+            if (condition.getHubid().equals(localMacAddress)) {
                 matchedConditions.add(condition);
             }
         }

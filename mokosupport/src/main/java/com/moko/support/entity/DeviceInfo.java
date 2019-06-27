@@ -16,6 +16,7 @@ public class DeviceInfo implements Serializable {
     public int rssi;
     public String mac;
     public ScanRecord scanRecord;
+    public String issueMessage = "";
 
     @Override
     public String toString() {
@@ -33,5 +34,9 @@ public class DeviceInfo implements Serializable {
             isSame = this.mac.equals(((DeviceInfo) object).mac);
         }
         return isSame;
+    }
+
+    public String getMacShortForm() {
+        return mac.replace(":", "").toLowerCase();
     }
 }

@@ -6,15 +6,17 @@ import com.asa.asasafety.ObjectManager.SafetyObjectManager;
 
 public class AlertVirtualSmartagEvent extends TimerEvent {
     private ApiConnectionAdaptor apiConnectionAdaptor;
+    private String localMacAddress;
 
-    public AlertVirtualSmartagEvent(ApiConnectionAdaptor apiConnectionAdaptor) {
+    public AlertVirtualSmartagEvent(ApiConnectionAdaptor apiConnectionAdaptor, String localMacAddress) {
         super(1, true);
         this.apiConnectionAdaptor = apiConnectionAdaptor;
+        this.localMacAddress = localMacAddress;
     }
 
     protected void event() {
         SafetyObjectManager.minorRemainNextAlertTimeByOne();
         SafetyObjectManager.removeOldVirtualSmartagRecords();
-        ApiConnectionAdaptor.sendAlertsToServer();
+        apiConnectionAdaptor.sendAlertsToServer(localMacAddress);
     }
 }

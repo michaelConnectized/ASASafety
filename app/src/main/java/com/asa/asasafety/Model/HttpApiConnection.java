@@ -20,7 +20,7 @@ public class HttpApiConnection extends ApiConnection {
     }
 
     public String connect(String postData) {
-        StringBuilder response = new StringBuilder("");
+        StringBuilder response = new StringBuilder();
         try {
             URL url = new URL( fullUrl );
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
@@ -43,6 +43,8 @@ public class HttpApiConnection extends ApiConnection {
                     while ((line=br.readLine()) != null) {
                         response.append(line);
                     }
+                } else {
+                    Log.e(tag, "ResponseCode: "+responseCode);
                 }
             } finally {
                 urlConnection.disconnect();

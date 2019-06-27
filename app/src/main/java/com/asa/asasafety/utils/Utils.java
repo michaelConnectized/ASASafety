@@ -16,9 +16,12 @@ import org.json.JSONException;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
@@ -140,5 +143,10 @@ public class Utils {
 
     public static SharedPreferences getSharePreference(Activity activity) {
         return activity.getSharedPreferences(activity.getResources().getString(R.string.share_preference), MODE_PRIVATE);
+    }
+
+    public static String getCurrentDatetime() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+        return sdf.format(new Date());
     }
 }

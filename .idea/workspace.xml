@@ -6,6 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="asasafety" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
@@ -69,10 +70,43 @@
     <last-search-timestamp>1560841521542</last-search-timestamp>
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/MokoSupportAdaptor/MokoSupportManager.java" line="68" />
+    <bookmark url="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/MokoSupportAdaptor/MokoSupportManager.java" line="74" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="039d029c-b9f9-4dfc-82c8-c9e0a737df94" name="Default Changelist" comment="" />
+    <list default="true" id="039d029c-b9f9-4dfc-82c8-c9e0a737df94" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Activity/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Activity/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Model/ApiConnectionAdaptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Model/ApiConnectionAdaptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Model/HttpApiConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Model/HttpApiConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Model/HttpsApiConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Model/HttpsApiConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/MokoSupportAdaptor/MokoSupportAdaptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/MokoSupportAdaptor/MokoSupportAdaptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/MokoSupportAdaptor/MokoSupportManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/MokoSupportAdaptor/MokoSupportManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/SmartagFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/SmartagFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/VirtualSmartag.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/VirtualSmartag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/ObjectManager/SafetyObjectManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/ObjectManager/SafetyObjectManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/AlertSmartagEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/AlertSmartagEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/AlertVirtualSmartagEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/AlertVirtualSmartagEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/GetDangerZoneEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/GetDangerZoneEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/GetWorkerEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/GetWorkerEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/utils/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mokosupport/src/main/java/com/moko/support/entity/DeviceInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/mokosupport/src/main/java/com/moko/support/entity/DeviceInfo.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,13 +127,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/AlertSmartagEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="153">
+              <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mokosupport/src/main/java/com/moko/support/MokoSupport.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="181">
+              <caret line="179" selection-start-line="179" selection-end-line="179" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/ObjectManager/SafetyObjectManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="104" selection-start-line="104" selection-end-line="104" />
+              <folding>
+                <element signature="method#setDangerZoneList#0;class#SafetyObjectManager#0" />
               </folding>
             </state>
           </provider>
@@ -109,7 +164,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/AlertVirtualSmartagEvent.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -118,87 +173,14 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/VirtualSmartag.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Model/ApiConnectionAdaptor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding>
-                <element signature="e#298#299#0" expanded="true" />
-                <element signature="e#340#341#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/GetDangerZoneEvent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+            <state relative-caret-position="159">
+              <caret line="150" column="16" selection-start-line="150" selection-start-column="16" selection-end-line="150" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/Worker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/TimerEvent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/GetWorkerEvent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="26" column="28" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#768#769#0" expanded="true" />
-                <element signature="e#806#807#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/MacAddress/MacAddressManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="41" column="23" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/ObjectManager/SafetyObjectManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2389">
-              <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#setWorkerList#0;class#SafetyObjectManager#0" />
-                <element signature="e#6926#6927#0" expanded="true" />
-                <element signature="method#setDangerZoneList#0;class#SafetyObjectManager#0" />
+                <element signature="e#6262#6263#0" expanded="true" />
+                <element signature="e#6302#6303#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -207,15 +189,68 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/MokoSupportAdaptor/MokoSupportManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="54" column="75" selection-start-line="54" selection-start-column="57" selection-end-line="54" selection-end-column="75" />
+            <state relative-caret-position="265">
+              <caret line="141" column="16" selection-start-line="141" selection-start-column="16" selection-end-line="141" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Activity/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="109" column="48" selection-start-line="109" selection-start-column="48" selection-end-line="109" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#startScan#0;class#MokoSupportManager#0" />
-                <element signature="e#2451#2452#0" expanded="true" />
-                <element signature="e#2496#2497#0" expanded="true" />
-                <element signature="method#isNoRemainConnTimes#0;class#MokoSupportManager#0" />
-                <element signature="e#4068#4069#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/GetDangerZoneEvent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="413">
+              <caret line="55" column="1" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="65" column="59" selection-start-line="65" selection-start-column="59" selection-end-line="65" selection-end-column="59" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/MokoSupportAdaptor/MokoSupportAdaptor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="108" column="16" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2494#2495#0" expanded="true" />
+                <element signature="e#2560#2561#0" expanded="true" />
+                <element signature="e#2996#2997#0" expanded="true" />
+                <element signature="e#3040#3041#0" expanded="true" />
+                <element signature="e#3091#3092#0" expanded="true" />
+                <element signature="e#3128#3129#0" expanded="true" />
+                <element signature="e#3324#3325#0" expanded="true" />
+                <element signature="e#3381#3382#0" expanded="true" />
+                <element signature="e#3677#3678#0" expanded="true" />
+                <element signature="e#3724#3725#0" expanded="true" />
+                <element signature="e#3909#3910#0" expanded="true" />
+                <element signature="e#3964#3965#0" expanded="true" />
+                <element signature="e#4137#4138#0" expanded="true" />
+                <element signature="e#4187#4188#0" expanded="true" />
+                <element signature="method#onStopScan#0;class#MokoSupportAdaptor#0" />
               </folding>
             </state>
           </provider>
@@ -233,20 +268,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>asasafety</find>
-      <find>SUCCESS</find>
-      <find>turnOnLed</find>
-      <find>disConnectBle</find>
-      <find>getLockState</find>
-      <find>mokosupport</find>
-      <find>put(</find>
-      <find>nameValuePairs</find>
-      <find>java</find>
-      <find>tryJsonToDangerZoneList</find>
-      <find>deviceInfoList</find>
-      <find>startService</find>
-      <find>if (mokoService!=null)</find>
-      <find>e4</find>
       <find>macList</find>
       <find>mokoManager</find>
       <find>DISCONNECTED</find>
@@ -254,7 +275,6 @@
       <find>request</find>
       <find>disconnect</find>
       <find>ACTION_RESPONSE_TIMEOUT</find>
-      <find>mac</find>
       <find>il</find>
       <find>fil</find>
       <find>sendor</find>
@@ -263,10 +283,25 @@
       <find>beac</find>
       <find>listen</find>
       <find>26.0</find>
+      <find>deviceInfo.mac =</find>
+      <find>.mac =</find>
+      <find>mac.replace</find>
+      <find>deviceInfo.mac</find>
+      <find>initRequest</find>
+      <find>onScanDeviceListener</find>
+      <find>stopScanDevice</find>
+      <find>maclocalMacAddress</find>
+      <find>new SimpleDateFormat(&quot;yyy</find>
+      <find>&quot;asasafety&quot;</find>
+      <find>event</find>
+      <find>mac</find>
+      <find>Log.e(</find>
+      <find>zone</find>
+      <find>set</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -277,14 +312,11 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/yukimilunamon/asasafety/service/MokoService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/yukimilunamon/asasafety/MokoSupportAdaptor/mokoSupportAdaptor.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/MokoSupportAdaptor/mokoSupportAdaptor.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" />
         <option value="$PROJECT_DIR$/mokosupport/src/main/java/com/moko/support/MokoSupport.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Model/URLConnection.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/bools.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Model/ApiConnection.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/utils/Utils.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/MacAddress/macAddressManager.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/service/MokoService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Permission/Permission.java" />
@@ -293,33 +325,36 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/mokosupport/src/main/java/com/moko/support/task/WriteConfigTask.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/CentralTimerThread.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/MacAddress/MacAddressManager.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/ApiObject.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/Alert.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/Worker.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/DangerZone.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/DangerZoneCondition.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/TimerEvent.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/GetDangerZoneEvent.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Model/ApiConnectionAdaptor.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/SmartagInReal.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/Smartag4Connect.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/MokoSupportAdaptor/MokoSupportAdaptor.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/Thread.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/Smartag.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/AlertSmartagAndServerEvent.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/MacAddress/MacAddressManager.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/MokoSupportAdaptor/MokoSupportAdaptor.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/GetDangerZoneEvent.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/GetWorkerEvent.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/AlertVirtualSmartagEvent.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/VirtualSmartag.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Model/HttpApiConnection.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Model/HttpsApiConnection.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/utils/Utils.java" />
         <option value="$PROJECT_DIR$/mokosupport/src/main/java/com/moko/support/entity/DeviceInfo.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/SmartagFactory.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/Smartag.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/VirtualSmartag.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Model/ApiConnectionAdaptor.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/ObjectManager/SafetyObjectManager.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Activity/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/MokoSupportAdaptor/MokoSupportManager.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/AlertSmartagAndServerEvent.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/GetWorkerEvent.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/AlertSmartagEvent.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/AlertVirtualSmartagEvent.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/ObjectManager/SafetyObjectManager.java" />
       </list>
     </option>
   </component>
@@ -334,6 +369,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -364,13 +401,6 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="asasafety" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="MacAddress" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ASASafety" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="asasafety" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="MokoSupportAdaptor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -378,21 +408,7 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="asasafety" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="Object" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ASASafety" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="asasafety" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="ObjectManager" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ASASafety" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="asasafety" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="Permission" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ASASafety" type="1abcf292:AndroidViewProjectNode" />
@@ -411,6 +427,28 @@
             </path>
             <path>
               <item name="ASASafety" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="generatedJava" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="ASASafety" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="generatedJava" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="asasafety" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ASASafety" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="ASASafety" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="ASASafety" type="1abcf292:AndroidViewProjectNode" />
               <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
@@ -418,14 +456,12 @@
         </subPane>
       </pane>
       <pane id="ProjectPane" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="device.picker.selection" value="06157df644a7913a" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HelmetTagCode" />
+    <property name="device.picker.selection" value="0123456789ABCDEF" />
+    <property name="last_opened_file_path" value="C:/xampp/htdocs/Connectized/InfoSmartASA" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -592,7 +628,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19669509" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.19669509" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -600,13 +636,13 @@
       <window_info id="Designer" order="6" />
       <window_info id="Resources Explorer" order="7" />
       <window_info id="Capture Tool" order="8" />
-      <window_info anchor="bottom" id="Build" order="0" weight="0.20888889" />
+      <window_info anchor="bottom" id="Build" order="0" sideWeight="0.49946696" weight="0.37777779" />
       <window_info anchor="bottom" id="Run" order="1" />
-      <window_info anchor="bottom" x="22" y="269" width="1876" height="502" id="Logcat" order="2" visible="true" weight="0.31111112" />
+      <window_info active="true" anchor="bottom" x="22" y="269" width="1876" height="502" id="Logcat" order="2" sideWeight="0.49946696" visible="true" weight="0.36555555" />
       <window_info anchor="bottom" id="TODO" order="3" />
       <window_info anchor="bottom" id="Find" order="4" />
       <window_info anchor="bottom" id="Terminal" order="5" />
-      <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.50053304" side_tool="true" weight="0.44666666" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Debug" order="8" />
       <window_info anchor="bottom" id="Android Profiler" order="9" />
@@ -614,32 +650,12 @@
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Theme Preview" order="2" />
       <window_info anchor="right" id="Fabric" order="3" weight="0.32995737" />
-      <window_info anchor="right" id="Preview" order="4" weight="0.32995737" />
+      <window_info anchor="right" id="Preview" order="4" weight="0.19349681" />
       <window_info anchor="right" id="Gradle" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object.java" />
-    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-28/org/json/JSONObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="380" column="29" selection-start-line="380" selection-start-column="15" selection-end-line="380" selection-end-column="29" />
-          <folding>
-            <element signature="e#5285#5286#0" expanded="true" />
-            <element signature="e#5353#5354#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="74" selection-start-line="5" selection-start-column="74" selection-end-line="5" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-28/android/net/MacAddress.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -704,13 +720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mokosupport/src/main/java/com/moko/support/MokoSupport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3978">
-          <caret line="271" column="16" selection-start-line="271" selection-start-column="16" selection-end-line="271" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mokosupport/src/main/java/com/moko/support/task/OrderTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -749,30 +758,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="88" column="11" selection-start-line="88" selection-start-column="11" selection-end-line="88" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="69" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/Alert.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#745#746#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -798,46 +787,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/utils/Utils.java">
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-28/java/util/List.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="140" column="54" selection-start-line="140" selection-start-column="36" selection-end-line="140" selection-end-column="54" />
+        <state relative-caret-position="228">
+          <caret line="144" column="19" selection-start-line="144" selection-start-column="19" selection-end-line="144" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mokosupport/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/DangerZone.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Model/ApiConnection.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/Worker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        <state relative-caret-position="272">
+          <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Model/HttpApiConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#411#412#0" expanded="true" />
-            <element signature="e#451#452#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Model/HttpsApiConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#376#377#0" expanded="true" />
-            <element signature="e#416#417#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -853,128 +835,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/CentralTimerThread.java">
+    <entry file="file://$PROJECT_DIR$/mokosupport/src/main/java/com/moko/support/handler/MokoLeScanHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="43" column="56" lean-forward="true" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-28/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="144" column="19" selection-start-line="144" selection-start-column="19" selection-end-line="144" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/Smartag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mokosupport/src/main/java/com/moko/support/entity/DeviceInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
+        <state relative-caret-position="274">
           <caret line="37" selection-start-line="37" selection-end-line="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mokosupport/build.gradle">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/MacAddress/MacAddressManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="49" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/SmartagFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="e#169#170#0" expanded="true" />
-            <element signature="e#211#212#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/DangerZone.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+          <caret line="45" column="39" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Permission/Permission.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/Alert.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+        <state relative-caret-position="255">
+          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/MokoSupportAdaptor/MokoSupportAdaptor.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/GetWorkerEvent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="114" column="16" selection-start-line="114" selection-start-column="16" selection-end-line="114" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#onStopScan#0;class#MokoSupportAdaptor#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Activity/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#defaultInit#0;class#MainActivity#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Model/ApiConnectionAdaptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="129" column="23" selection-start-line="129" selection-start-column="23" selection-end-line="129" selection-end-column="23" />
+        <state relative-caret-position="424">
+          <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/Worker.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/CentralTimerThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+        <state relative-caret-position="442">
+          <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -988,78 +889,155 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/MacAddress/MacAddressManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="41" column="23" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/GetWorkerEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="26" column="28" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#768#769#0" expanded="true" />
-            <element signature="e#806#807#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/GetDangerZoneEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/MokoSupportAdaptor/MokoSupportManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="54" column="75" selection-start-line="54" selection-start-column="57" selection-end-line="54" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#startScan#0;class#MokoSupportManager#0" />
-            <element signature="e#2451#2452#0" expanded="true" />
-            <element signature="e#2496#2497#0" expanded="true" />
-            <element signature="method#isNoRemainConnTimes#0;class#MokoSupportManager#0" />
-            <element signature="e#4068#4069#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/VirtualSmartag.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="340">
+          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
           <folding>
             <element signature="e#298#299#0" expanded="true" />
             <element signature="e#340#341#0" expanded="true" />
+            <element signature="e#431#432#0" expanded="true" />
+            <element signature="e#460#461#0" expanded="true" />
+            <element signature="e#530#531#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/AlertVirtualSmartagEvent.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Model/HttpsApiConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="557">
+          <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/AlertSmartagEvent.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Model/HttpApiConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="49" column="37" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Model/ApiConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/utils/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="151" column="1" selection-start-line="151" selection-start-column="1" selection-end-line="151" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Permission/Permission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/Smartag.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mokosupport/src/main/java/com/moko/support/entity/DeviceInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/SmartagFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="17" column="56" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/GetDangerZoneEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="55" column="1" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Model/ApiConnectionAdaptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="150" column="16" selection-start-line="150" selection-start-column="16" selection-end-line="150" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6262#6263#0" expanded="true" />
+            <element signature="e#6302#6303#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="65" column="59" selection-start-line="65" selection-start-column="59" selection-end-line="65" selection-end-column="59" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Activity/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="109" column="48" selection-start-line="109" selection-start-column="48" selection-end-line="109" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1068,13 +1046,69 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/ObjectManager/SafetyObjectManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2389">
-          <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
+        <state relative-caret-position="414">
+          <caret line="104" selection-start-line="104" selection-end-line="104" />
+          <folding>
+            <element signature="method#setDangerZoneList#0;class#SafetyObjectManager#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/AlertVirtualSmartagEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#setWorkerList#0;class#SafetyObjectManager#0" />
-            <element signature="e#6926#6927#0" expanded="true" />
-            <element signature="method#setDangerZoneList#0;class#SafetyObjectManager#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/MokoSupportAdaptor/MokoSupportAdaptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="108" column="16" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2494#2495#0" expanded="true" />
+            <element signature="e#2560#2561#0" expanded="true" />
+            <element signature="e#2996#2997#0" expanded="true" />
+            <element signature="e#3040#3041#0" expanded="true" />
+            <element signature="e#3091#3092#0" expanded="true" />
+            <element signature="e#3128#3129#0" expanded="true" />
+            <element signature="e#3324#3325#0" expanded="true" />
+            <element signature="e#3381#3382#0" expanded="true" />
+            <element signature="e#3677#3678#0" expanded="true" />
+            <element signature="e#3724#3725#0" expanded="true" />
+            <element signature="e#3909#3910#0" expanded="true" />
+            <element signature="e#3964#3965#0" expanded="true" />
+            <element signature="e#4137#4138#0" expanded="true" />
+            <element signature="e#4187#4188#0" expanded="true" />
+            <element signature="method#onStopScan#0;class#MokoSupportAdaptor#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/MokoSupportAdaptor/MokoSupportManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="141" column="16" selection-start-line="141" selection-start-column="16" selection-end-line="141" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mokosupport/src/main/java/com/moko/support/MokoSupport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="179" selection-start-line="179" selection-end-line="179" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Thread/TimerEvent/AlertSmartagEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

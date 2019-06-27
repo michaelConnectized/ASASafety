@@ -6,18 +6,22 @@ import android.util.Log;
 import com.asa.asasafety.Object.Alert;
 import com.asa.asasafety.Object.ApiObject;
 import com.asa.asasafety.Object.DangerZone;
+import com.asa.asasafety.Object.VirtualSmartag;
 import com.asa.asasafety.Object.Worker;
+import com.asa.asasafety.ObjectManager.SafetyObjectManager;
 import com.asa.asasafety.R;
+import com.asa.asasafety.utils.Utils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class ApiConnectionAdaptor {
-    private final String tag = "ApiConnectionAdaptor";
+    private static final String tag = "ApiConnectionAdaptor";
 
     private Resources res;
     private String baseUrl;
@@ -25,6 +29,8 @@ public class ApiConnectionAdaptor {
     private String getCurrentWorkerListUrl;
     private String addAlertUrl;
     private String getAlertsUrl;
+
+    private String workerLastUpdated = "N/A";
 
     private boolean isHttps;
 
@@ -53,19 +59,20 @@ public class ApiConnectionAdaptor {
         return getDangerZoneList(postData);
     }
 
-    public List<Worker> getCurrentWorkerList(String postData) {
+    public List<Worker> getCurrentWorkerListAndSetLastUpdated(String postData) {
         String resultJson = tryExecuteAndGetFromServer(getCurrentWorkerListUrl, postData);
         List<ApiObject> apiObjectList = tryJsonToApiObjectList("workers", resultJson, new Worker());
+        workerLastUpdated = getLastUpdated(resultJson);
         return (List<Worker>)(List<?>)apiObjectList;
     }
 
     public List<Worker> getCurrentWorkerListDelta(String postData) {
-        return getCurrentWorkerList(postData);
+        return getCurrentWorkerListAndSetLastUpdated(postData);
     }
 
-    public String addAlert(String postData) {
+    public boolean addAlert(String postData) {
         String resultJson = tryExecuteAndGetFromServer(addAlertUrl, postData);
-        return resultJson;
+        return isSuccess(resultJson);
     }
 
     public List<Alert> getAlerts(String postData) {
@@ -73,6 +80,8 @@ public class ApiConnectionAdaptor {
         List<ApiObject> apiObjectList = tryJsonToApiObjectList("alertList", resultJson, new Alert());
         return (List<Alert>)(List<?>)apiObjectList;
     }
+
+
 
     private List<ApiObject> tryJsonToApiObjectList(String apiJsonName, String json, ApiObject objClass) {
         try {
@@ -108,11 +117,23 @@ public class ApiConnectionAdaptor {
         return success;
     }
 
+    private String getLastUpdated(String json) {
+        String lastUpdated = "FAIL";
+        try {
+            JSONObject jsonObject = new JSONObject(json);
+            lastUpdated = jsonObject.getString("lastUpdated");
+        } catch (Exception e) {
+            Log.e(tag, e.toString());
+        }
+        return lastUpdated;
+    }
+
     private String tryExecuteAndGetFromServer(String fullUrl, String postData) {
         String response;
         try {
             response = getApiConnection(fullUrl, postData).execute().get();
         } catch (Exception e) {
+            Log.e(tag, "tryExecuteAndGetFromServer: "+e.toString());
             response = "";
         }
         return response;
@@ -127,7 +148,37 @@ public class ApiConnectionAdaptor {
         return apiConnection;
     }
 
-    public static void sendAlertsToServer() {
-        //TODO
+    public void sendAlertsToServer(String localMacAddress) {
+        if (SafetyObjectManager.filteredVirtualSmartags.isEmpty()) {
+            return;
+        }
+        for (int i=0; i<SafetyObjectManager.filteredVirtualSmartags.size(); i++) {
+            VirtualSmartag smartag = SafetyObjectManager.filteredVirtualSmartags.get(i);
+            if (smartag.isSent()) {
+                continue;
+            }
+            String postData = getJsonPostData(localMacAddress, SafetyObjectManager.getWorkerCardId(smartag), smartag.issueMessage);
+            if (addAlert(postData)) {
+                SafetyObjectManager.filteredVirtualSmartags.get(i).setSent(true);
+            }
+        }
+
+    }
+
+    private static String getJsonPostData(String deviceId, String workerId, String issueMessage) {
+        JSONObject postData = new JSONObject();
+        try {
+            postData.put("deviceId", deviceId);
+            postData.put("workerId", workerId);
+            postData.put("issueMessage", issueMessage);
+            postData.put("time", Utils.getCurrentDatetime());
+        } catch (JSONException e) {
+            Log.e(tag, "getJsonPostData: "+e.toString());
+        }
+        return postData.toString();
+    }
+
+    public String getWorkerLastUpdated() {
+        return workerLastUpdated;
     }
 }

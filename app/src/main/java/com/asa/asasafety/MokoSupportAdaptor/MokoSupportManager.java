@@ -2,10 +2,13 @@ package com.asa.asasafety.MokoSupportAdaptor;
 
 import android.app.Activity;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.asa.asasafety.Object.Smartag;
 import com.asa.asasafety.Object.SmartagFactory;
 import com.asa.asasafety.ObjectManager.SafetyObjectManager;
+import com.asa.asasafety.R;
+import com.asa.asasafety.utils.Utils;
 import com.moko.support.entity.DeviceInfo;
 
 import java.util.ArrayList;
@@ -56,14 +59,17 @@ public class MokoSupportManager {
     }
 
     public void deviceScannedEvent(DeviceInfo deviceInfo) {
-        if (SafetyObjectManager.isFitDangerZone(deviceInfo)) {
-            appendToSmartagQueue(deviceInfo);
+        Log.d("deviceScannedEvent", deviceInfo.mac+": "+deviceInfo.rssi);
+        if (SafetyObjectManager.isFitDangerZone(deviceInfo, Utils.getSharePreference(activity).getString("mac", "N/A"))) {
+            checkAndAppendToSmartagQueue(deviceInfo);
             SafetyObjectManager.checkAndAppendVirtualSmartagList(deviceInfo);
         }
     }
 
-    private void appendToSmartagQueue(DeviceInfo deviceInfo) {
-        smartagQueue.add(SmartagFactory.getSmartag(deviceInfo));
+    private void checkAndAppendToSmartagQueue(DeviceInfo deviceInfo) {
+        Smartag smartag = SmartagFactory.getSmartag(deviceInfo);
+        if (!smartagQueue.contains(smartag) && !SafetyObjectManager.filteredSmartags.contains(smartag))
+            smartagQueue.add(SmartagFactory.getSmartag(deviceInfo));
     }
 
     public boolean startScan() {
@@ -82,6 +88,11 @@ public class MokoSupportManager {
     public void setLedRequest(int second) {
         mokoSupportAdaptor.initRequest();
         mokoSupportAdaptor.setLedRequest(second);
+    }
+
+    public void setCloseRequest() {
+        mokoSupportAdaptor.initRequest();
+        mokoSupportAdaptor.setTurnOffRequest();
     }
 
     private void readyToSendRequestEvent() {
@@ -128,6 +139,11 @@ public class MokoSupportManager {
         isSent = true;
     }
 
+    public void simpleConnect(DeviceInfo deviceInfo) {
+        Log.e("asasafety", "simpleConnect: "+deviceInfo.mac);
+        mokoSupportAdaptor.connectDevice(deviceInfo);
+    }
+
     private void moveHeadToTail(Smartag smartag) {
         smartagQueue.remove(smartag);
         smartagQueue.add(smartag);
@@ -146,5 +162,14 @@ public class MokoSupportManager {
             Log.e("asasafety", ""+(i+1)+". "+ smartagQueue.get(i).mac);
         }
         Log.e("asasafety", "--------------------------------------------------------");
+    }
+
+    public void updateUI() {
+        String list = "";
+        if (!smartagQueue.isEmpty())
+            for (int i=0; i<smartagQueue.size(); i++) {
+                list += smartagQueue.get(i).mac+", Try Times:"+(3-smartagQueue.get(i).getRemainConnectionTimes())+"\n";
+            }
+        ((TextView)activity.findViewById(R.id.tv_queue_list)).setText(list);
     }
 }
