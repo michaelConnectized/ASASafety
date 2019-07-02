@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.asa.asasafety">
+    package="com.asa.safety">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.asa.asasafety.Activity.MainActivity"
+            android:name="com.asa.safety.activity.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -22,8 +24,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name="com.asa.asasafety.service.MokoService" />
-        <service android:name="com.asa.asasafety.service.DfuService" />
+        <service android:name="com.asa.safety.service.MokoService" />
+        <service android:name="com.asa.safety.service.DfuService" />
+        <service
+            android:name="com.asa.utils.location.GpsBackgroundService"
+            android:enabled="true"
+            android:exported="true" />
+
     </application>
 
 
