@@ -124,9 +124,7 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
     }
 
     public void sendGetLockStatusRequest() {
-        mokoService.mHandler.postDelayed(()-> {
-                mokoService.sendOrder(mokoService.getLockState());
-            }, 1000);
+        mokoService.mHandler.postDelayed(()-> mokoService.sendOrder(mokoService.getLockState()), 1000);
     }
 
     public void initRequest() {

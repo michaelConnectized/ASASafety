@@ -45,9 +45,8 @@ public class GpsBackgroundService extends Service implements GpsStatus.Listener 
     }
 
     private class LocationListener implements android.location.LocationListener {
-        private Location lastLocation = null;
+        private Location lastLocation;
         private final String TAG = "LocationListener";
-//        private Location mLastLocation;
 
         public LocationListener() { }
 
@@ -100,16 +99,10 @@ public class GpsBackgroundService extends Service implements GpsStatus.Listener 
 
     @Override
     public void onCreate() {
-        Log.i(TAG, "onCreate");
-
-        //STEP2: register the receiver
         if (serviceReceiver != null) {
-            //Create an intent filter to listen to the broadcast sent with the action "ACTION_STRING_SERVICE"
             IntentFilter intentFilter = new IntentFilter(ACTION_STRING_SERVICE);
-            //Map the intent filter to the receiver
             registerReceiver(serviceReceiver, intentFilter);
         }
-
         initializeLocationManager();
     }
 
@@ -128,20 +121,17 @@ public class GpsBackgroundService extends Service implements GpsStatus.Listener 
                 Log.i(TAG, "fail to remove mLocation listners, ignore"+ ex);
             }
         }
-        //STEP3: Unregister the receiver
         try {
             unregisterReceiver(serviceReceiver);
         } catch (Exception ex) {
             Log.i(TAG, "fail to remove serviceReceiver, ignore"+ ex);
         }
-
     }
 
     @SuppressWarnings({"MissingPermission"})
     private void initializeLocationManager() {
         try {
             if (mLocationManager == null) {
-//            mLocationManager = (MyLocationManager) getApplicationContext().getSystemService(Context.LOCATION_SERVICE);
                 mLocationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
                 mLocationManager.addGpsStatusListener(this);
             }
@@ -156,25 +146,20 @@ public class GpsBackgroundService extends Service implements GpsStatus.Listener 
         try {
             if (mLocationManager!=null)
                 mStatus = mLocationManager.getGpsStatus(mStatus);
-            //Log.e("GpsBackgroundServiceSta", mStatus.getSatellites());
         } catch (SecurityException e) {
             Log.e(TAG, e.toString());
         }
         switch (event) {
             case GpsStatus.GPS_EVENT_STARTED:
-                //Log.e(TAG, "GPS_EVENT_STARTED");
                 break;
 
             case GpsStatus.GPS_EVENT_STOPPED:
-                //Log.e(TAG, "GPS_EVENT_STOPPED");
                 break;
 
             case GpsStatus.GPS_EVENT_FIRST_FIX:
-                //Log.e(TAG, "GPS_EVENT_FIRST_FIX");
                 break;
 
             case GpsStatus.GPS_EVENT_SATELLITE_STATUS:
-                //Log.e(TAG, "GPS_EVENT_SATELLITE_STATUS");
                 break;
         }
 
@@ -182,13 +167,11 @@ public class GpsBackgroundService extends Service implements GpsStatus.Listener 
 
     public void startTracking() {
         Log.e(TAG, "startTracking()");
-//        if (mLocationManager.isProviderEnabled(MyLocationManager.GPS_PROVIDER)) {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             Log.e(TAG, "PERMISSION NOT GRANTED!!");
             return;
         }
         initializeLocationManager();
-//        }
         mLocationListener = new LocationListener();
 
         try {
@@ -248,7 +231,6 @@ public class GpsBackgroundService extends Service implements GpsStatus.Listener 
 
     //STEP1: Create a broadcast receiver
     private BroadcastReceiver serviceReceiver = new BroadcastReceiver() {
-
         @Override
         public void onReceive(Context context, Intent intent) {
             Toast.makeText(getApplicationContext(), "received message in service..!", Toast.LENGTH_SHORT).show();
@@ -257,14 +239,12 @@ public class GpsBackgroundService extends Service implements GpsStatus.Listener 
         }
     };
 
-
     //send broadcast from activity to all receivers listening to the action "ACTION_STRING_ACTIVITY"
     private void sendBroadcast() {
         Intent new_intent = new Intent();
         new_intent.setAction(ACTION_STRING_ACTIVITY);
         sendBroadcast(new_intent);
     }
-
 
     public Location getmLastLocation() {
         Log.e(TAG, "getmLastLocation()");

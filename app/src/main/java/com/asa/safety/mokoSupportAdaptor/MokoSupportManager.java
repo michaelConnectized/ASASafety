@@ -164,10 +164,6 @@ public class MokoSupportManager {
         return mokoSupportAdaptor.getDeviceInfoList();
     }
 
-    public static void sendAlertsToFilteredSmartags() {
-        //TODO
-    }
-
     public void showTheQueue() {
         for (int i = 0; i< smartagQueue.size(); i++) {
             Log.e("asasafety", ""+(i+1)+". "+ smartagQueue.get(i).mac);

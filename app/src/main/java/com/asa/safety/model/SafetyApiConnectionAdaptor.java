@@ -74,8 +74,6 @@ public class SafetyApiConnectionAdaptor extends ApiConnectionAdaptor {
         return (List<Alert>)(List<?>)apiObjectList;
     }
 
-
-
     private String getLastUpdated(String json) {
         String lastUpdated = "FAIL";
         try {

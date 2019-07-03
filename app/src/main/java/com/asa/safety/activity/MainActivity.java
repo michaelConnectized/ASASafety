@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //getSupportActionBar().hide(); //hide the title bar
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         initVar();
@@ -54,8 +53,7 @@ public class MainActivity extends AppCompatActivity {
             SafetyObjectManager.checkAndInitList();
             AttendObjectManager.checkAndInitList();
             new Handler().postDelayed(() -> {
-//                mokoManager.setLedRequest(ledLightingTime);
-                mokoManager.setCloseRequest();
+                mokoManager.setLedRequest(ledLightingTime);
                 mokoManager.startScan();
             }, 1000);
 
@@ -105,28 +103,6 @@ public class MainActivity extends AppCompatActivity {
         ((TextView)findViewById(R.id.tv_mac)).setText(Utils.getMacFromSharedPreference(this));
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
     @Override
     public void onDestroy() {

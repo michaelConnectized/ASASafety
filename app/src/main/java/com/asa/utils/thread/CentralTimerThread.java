@@ -25,7 +25,6 @@ public class CentralTimerThread extends Thread {
         this.alarmingTime = time * timeUnit;
     }
 
-
     @Override
     public void task() {
         currentTime++;

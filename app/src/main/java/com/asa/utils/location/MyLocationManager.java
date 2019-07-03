@@ -26,8 +26,7 @@ public class MyLocationManager {
     private static final String ACTION_STRING_SERVICE = "ToService";
     private static final String ACTION_STRING_ACTIVITY = "ToActivity";
 
-
-    private String tag = "MyLocationManager";
+    private final String tag = "MyLocationManager";
     private Activity activity;
 
     public GpsBackgroundService gpsService;
@@ -49,7 +48,6 @@ public class MyLocationManager {
         new_intent.setAction(ACTION_STRING_SERVICE);
         activity.sendBroadcast(new_intent);
     }
-
 
     public void enableGpsService() {
         final Intent gpsIntent = new Intent(activity, GpsBackgroundService.class);
@@ -92,7 +90,7 @@ public class MyLocationManager {
         return new Date().getTime()-lastLocUpdateTime<=30000;
     }
 
-    public ServiceConnection serviceConnection = new ServiceConnection() {
+    private ServiceConnection serviceConnection = new ServiceConnection() {
         public void onServiceConnected(ComponentName className, IBinder service) {
             String name = className.getClassName();
             if (name.endsWith("GpsBackgroundService")) {
@@ -108,7 +106,6 @@ public class MyLocationManager {
         }
     };
 
-    //判断GPS是否可用
     public boolean isGpsAble(){
         lm = (android.location.LocationManager) activity.getSystemService(Context.LOCATION_SERVICE);
         return lm.isProviderEnabled(android.location.LocationManager.GPS_PROVIDER);
