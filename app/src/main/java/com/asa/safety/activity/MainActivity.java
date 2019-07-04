@@ -4,26 +4,24 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import com.asa.attend.model.AttendApiConnectionAdaptor;
-import com.asa.attend.objectManager.AttendObjectManager;
-import com.asa.attend.thread.event.TakeAttendanceEvent;
-import com.asa.safety.macAddress.MacAddressManager;
-import com.asa.safety.model.SafetyApiConnectionAdaptor;
-import com.asa.safety.mokoSupportAdaptor.MokoSupportManager;
-import com.asa.safety.objectManager.SafetyObjectManager;
-import com.asa.safety.thread.event.AlertSmartagEvent;
-import com.asa.safety.thread.event.AlertVirtualSmartagEvent;
-import com.asa.safety.thread.event.GetDangerZoneEvent;
-import com.asa.safety.thread.event.GetWorkerEvent;
-import com.asa.utils.permission.Permission;
+import com.asa.safety.attend.model.AttendApiConnectionAdaptor;
+import com.asa.safety.attend.objectManager.AttendObjectManager;
+import com.asa.safety.attend.thread.event.TakeAttendanceEvent;
+import com.asa.safety.safety.macAddress.MacAddressManager;
+import com.asa.safety.safety.model.SafetyApiConnectionAdaptor;
+import com.asa.safety.safety.mokoSupportAdaptor.MokoSupportManager;
+import com.asa.safety.safety.objectManager.SafetyObjectManager;
+import com.asa.safety.safety.event.AlertVirtualSmartagEvent;
+import com.asa.safety.safety.event.GetDangerZoneEvent;
+import com.asa.safety.safety.event.AlertSmartagEvent;
+import com.asa.safety.safety.event.GetWorkerEvent;
+import com.asa.safety.utils.permission.Permission;
 import com.asa.safety.R;
-import com.asa.utils.thread.CentralTimerThread;
-import com.asa.utils.Utils;
+import com.asa.safety.utils.thread.CentralTimerThread;
+import com.asa.safety.utils.Utils;
 import com.moko.support.entity.DeviceInfo;
 
 import org.json.JSONException;
@@ -48,15 +46,11 @@ public class MainActivity extends AppCompatActivity {
         requestPermission();
         initMacAddress();
         initService();
+        SafetyObjectManager.checkAndInitList();
+        AttendObjectManager.checkAndInitList();
         try {
             initTimeEvent();
-            SafetyObjectManager.checkAndInitList();
-            AttendObjectManager.checkAndInitList();
-            new Handler().postDelayed(() -> {
-                mokoManager.setLedRequest(ledLightingTime);
-                mokoManager.startScan();
-            }, 1000);
-
+            startScan();
         } catch (Exception e) {
             Log.e("TestingUse", e.toString());
         }
@@ -101,6 +95,13 @@ public class MainActivity extends AppCompatActivity {
         MacAddressManager macAddressManager = new MacAddressManager(this);
         macAddressManager.saveMacAddr();
         ((TextView)findViewById(R.id.tv_mac)).setText(Utils.getMacFromSharedPreference(this));
+    }
+
+    public void startScan() {
+        new Handler().postDelayed(() -> {
+            mokoManager.setLedRequest(ledLightingTime);
+            mokoManager.startScan();
+        }, 1000);
     }
 
 

@@ -140,11 +140,6 @@ public class MokoSupport implements MokoResponseCallback {
      * @Description 蓝牙是否打开
      */
     public boolean isBluetoothOpen() {
-        if (mBluetoothAdapter != null) {
-            Log.e("asasafety", "is null");
-        } else {
-            Log.e("asasafety", "null");
-        }
         return mBluetoothAdapter != null && mBluetoothAdapter.isEnabled();
     }
 

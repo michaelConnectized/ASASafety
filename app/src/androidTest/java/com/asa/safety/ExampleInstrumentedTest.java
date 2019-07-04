@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.yukimilunamon.asasafety", appContext.getPackageName());
+        assertEquals("com.asa.safety", appContext.getPackageName());
     }
 }

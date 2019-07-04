@@ -2,7 +2,7 @@ package com.asa.safety.utils;
 
 import org.junit.Test;
 
-import static com.asa.utils.Utils.getCurrentDatetime;
+import static com.asa.safety.utils.Utils.getCurrentDatetime;
 
 public class UtilsTest {
 
