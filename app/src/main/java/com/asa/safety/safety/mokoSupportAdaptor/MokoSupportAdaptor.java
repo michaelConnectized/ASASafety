@@ -191,7 +191,6 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
     private BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            Log.e(tag, "Something received!");
             if (intent != null) {
                 String action = intent.getAction();
                 if (MokoConstants.ACTION_CONNECT_SUCCESS.equals(action)) {
@@ -247,8 +246,7 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
                 if ("00".equals(valueStr)) {
                     if (!TextUtils.isEmpty(unLockResponse)) {
                         unLockResponse = "";
-                        MokoSupport.getInstance().disConnectBle();
-                        startScan();
+                        mokoService.sendOrder(mokoService.getUnLock());
                     } else {
                         mokoService.sendOrder(mokoService.getUnLock());
                     }

@@ -6,6 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="MokoSupportAdaptor" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
@@ -89,60 +90,9 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASASafety.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ASASafety.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/asa/safety/ExampleInstrumentedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/asa/safety/ExampleInstrumentedTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/attend/analyser/BeaconAnalyser.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/attend/analyser/BeaconAnalyser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/attend/analyser/appleIbeaconDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/attend/analyser/appleIbeaconDevice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/attend/analyser/helmetV1Device.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/attend/analyser/helmetV1Device.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/attend/analyser/helmetV2Device.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/attend/analyser/helmetV2Device.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/attend/analyser/helmetV3Device.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/attend/analyser/helmetV3Device.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/attend/analyser/minewDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/attend/analyser/minewDevice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/attend/model/AttendApiConnectionAdaptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/attend/model/AttendApiConnectionAdaptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/attend/object/Attendance.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/attend/object/Attendance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/attend/objectManager/AttendObjectManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/attend/objectManager/AttendObjectManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/attend/thread/event/TakeAttendanceEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/attend/thread/event/TakeAttendanceEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/activity/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/activity/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/macAddress/MacAddressManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/macAddress/MacAddressManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/model/SafetyApiConnectionAdaptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/model/SafetyApiConnectionAdaptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/mokoSupportAdaptor/MokoSupportAdaptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/mokoSupportAdaptor/MokoSupportAdaptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/mokoSupportAdaptor/MokoSupportManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/mokoSupportAdaptor/MokoSupportManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/object/Alert.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/object/Alert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/object/DangerZone.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/object/DangerZone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/object/DangerZoneCondition.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/object/DangerZoneCondition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/object/Smartag.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/object/Smartag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/object/SmartagFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/object/SmartagFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/object/VirtualSmartag.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/object/VirtualSmartag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/object/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/object/Worker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/objectManager/SafetyObjectManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/objectManager/SafetyObjectManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/service/DfuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/service/DfuService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/service/MokoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/service/MokoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/thread/event/AlertSmartagEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/event/AlertSmartagEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/thread/event/AlertVirtualSmartagEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/event/AlertVirtualSmartagEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/thread/event/GetDangerZoneEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/event/GetDangerZoneEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/thread/event/GetWorkerEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/event/GetWorkerEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/utils/Converter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/Converter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/utils/location/Coordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/location/Coordinate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/utils/location/GeoFencing.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/location/GeoFencing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/utils/location/GpsBackgroundService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/location/GpsBackgroundService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/utils/location/MyLocationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/location/MyLocationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/utils/model/ApiConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/model/ApiConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/utils/model/ApiConnectionAdaptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/model/ApiConnectionAdaptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/utils/model/HttpApiConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/model/HttpApiConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/utils/model/HttpsApiConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/model/HttpsApiConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/utils/object/ApiObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/object/ApiObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/utils/permission/Permission.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/permission/Permission.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/utils/thread/CentralTimerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/thread/CentralTimerThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/utils/thread/Thread.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/thread/Thread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/utils/thread/event/TimerEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/thread/event/TimerEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/asa/safety/utils/UtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/asa/safety/utils/UtilsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mokosupport/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/mokosupport/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/mokoSupportAdaptor/MokoSupportAdaptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/mokoSupportAdaptor/MokoSupportAdaptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/mokoSupportAdaptor/MokoSupportManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/mokoSupportAdaptor/MokoSupportManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mokosupport/src/main/java/com/moko/support/MokoSupport.java" beforeDir="false" afterPath="$PROJECT_DIR$/mokosupport/src/main/java/com/moko/support/MokoSupport.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -168,11 +118,23 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/mokoSupportAdaptor/MokoSupportAdaptor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="92" column="79" selection-start-line="92" selection-start-column="79" selection-end-line="92" selection-end-column="79" />
+            <state relative-caret-position="276">
+              <caret line="247" column="38" selection-start-line="247" selection-start-column="24" selection-end-line="247" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#onStopScan#0;class#MokoSupportAdaptor#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/service/MokoService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="102" column="41" selection-start-line="102" selection-start-column="41" selection-end-line="102" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -195,8 +157,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mokosupport/src/main/java/com/moko/support/MokoSupport.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="147" column="27" selection-start-line="147" selection-start-column="27" selection-end-line="147" selection-end-column="27" />
+            <state relative-caret-position="268">
+              <caret line="224" column="78" selection-start-line="224" selection-start-column="78" selection-end-line="224" selection-end-column="78" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mokosupport/src/main/java/com/moko/support/utils/BleConnectionCompat.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-28/android/bluetooth/BluetoothDevice.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="1822" column="22" selection-start-line="1822" selection-start-column="22" selection-end-line="1822" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -204,8 +184,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/mokoSupportAdaptor/MokoSupportManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+            <state relative-caret-position="863">
+              <caret line="168" selection-start-line="168" selection-end-line="168" />
               <folding>
                 <element signature="e#3611#3612#0" expanded="true" />
                 <element signature="e#3659#3660#0" expanded="true" />
@@ -236,39 +216,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/event/AlertVirtualSmartagEvent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/thread/event/TimerEvent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/test/java/com/asa/safety/utils/UtilsTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider editor-type-id="android-manifest" />
           <provider selected="true" editor-type-id="text-editor">
@@ -290,8 +237,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mBytes</find>
-      <find>&quot;mac&quot;</find>
       <find>LogManager</find>
       <find>getResources().getString(R.string</find>
       <find>checkAndInitList()</find>
@@ -320,6 +265,8 @@
       <find>is null</find>
       <find>dis</find>
       <find>targetSmartag</find>
+      <find>Try connect to</find>
+      <find>Something received</find>
     </findStrings>
     <replaceStrings>
       <replace>Log</replace>
@@ -331,7 +278,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/mokosupport/src/main/java/com/moko/support/entity/DeviceInfo.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Object/SmartagFactory.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/asasafety/Model/ApiConnectionAdaptor.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" />
@@ -377,18 +323,20 @@
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/com/asa/safety/ExampleInstrumentedTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/thread/event/TimerEvent.java" />
-        <option value="$PROJECT_DIR$/mokosupport/src/main/java/com/moko/support/MokoSupport.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/mokoSupportAdaptor/MokoSupportManager.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/safety/activity/MainActivity.java" />
+        <option value="$PROJECT_DIR$/mokosupport/src/main/java/com/moko/support/MokoSupport.java" />
+        <option value="$PROJECT_DIR$/mokosupport/src/main/java/com/moko/support/utils/BleConnectionCompat.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/mokoSupportAdaptor/MokoSupportManager.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/mokoSupportAdaptor/MokoSupportAdaptor.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="747" />
-    <option name="width" value="1180" />
-    <option name="height" value="728" />
+    <option name="x" value="318" />
+    <option name="y" value="138" />
+    <option name="width" value="2100" />
+    <option name="height" value="1500" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -451,8 +399,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="device.picker.selection" value="0123456789ABCDEF" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/HelmetTagCode" />
+    <property name="device.picker.selection" value="R28M41K5YKM" />
+    <property name="last_opened_file_path" value="$USER_HOME$/AndroidStudioProjects/NFCReader/NFCReader" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -719,23 +667,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/attend/model/AttendApiConnectionAdaptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="33" column="52" selection-start-line="33" selection-start-column="52" selection-end-line="33" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/macAddress/MacAddressManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="48" column="5" lean-forward="true" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/model/SafetyApiConnectionAdaptor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-87">
@@ -802,16 +733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-257">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/service/MokoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1056,13 +977,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mokosupport/src/main/java/com/moko/support/MokoSupport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="147" column="27" selection-start-line="147" selection-start-column="27" selection-end-line="147" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/thread/event/TimerEvent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
@@ -1117,10 +1031,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/mokoSupportAdaptor/MokoSupportManager.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/service/MokoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="102" column="41" selection-start-line="102" selection-start-column="41" selection-end-line="102" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mokosupport/src/main/java/com/moko/support/MokoSupport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="224" column="78" selection-start-line="224" selection-start-column="78" selection-end-line="224" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-28/android/bluetooth/BluetoothDevice.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
-          <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+          <caret line="1822" column="22" selection-start-line="1822" selection-start-column="22" selection-end-line="1822" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mokosupport/src/main/java/com/moko/support/utils/BleConnectionCompat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/mokoSupportAdaptor/MokoSupportManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="863">
+          <caret line="168" selection-start-line="168" selection-end-line="168" />
           <folding>
             <element signature="e#3611#3612#0" expanded="true" />
             <element signature="e#3659#3660#0" expanded="true" />
@@ -1130,8 +1075,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/mokoSupportAdaptor/MokoSupportAdaptor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="92" column="79" selection-start-line="92" selection-start-column="79" selection-end-line="92" selection-end-column="79" />
+        <state relative-caret-position="276">
+          <caret line="247" column="38" selection-start-line="247" selection-start-column="24" selection-end-line="247" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#onStopScan#0;class#MokoSupportAdaptor#0" />

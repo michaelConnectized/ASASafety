@@ -114,7 +114,7 @@ public class MokoSupportManager {
     private void writeSuccessfulEvent() {
         smartagQueue.remove(targetSmartag);
         SafetyObjectManager.addSmartagList(targetSmartag);
-        mokoSupportAdaptor.disconnectDevice();
+        disconnectDeviceEvent();
     }
 
     private void disconnectDeviceEvent() {

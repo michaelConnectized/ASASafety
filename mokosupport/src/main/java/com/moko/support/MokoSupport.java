@@ -201,15 +201,15 @@ public class MokoSupport implements MokoResponseCallback {
 
     public void connDevice(final Context context, final String address, final MokoConnStateCallback mokoConnStateCallback) {
         if (TextUtils.isEmpty(address)) {
-            LogModule.i("connDevice: 地址为空");
+            Log.e("MokoSupport", "connDevice: 地址为空");
             return;
         }
         if (!isBluetoothOpen()) {
-            LogModule.i("connDevice: 蓝牙未打开");
+            Log.e("MokoSupport", "connDevice: 蓝牙未打开");
             return;
         }
         if (isConnDevice(context, address)) {
-            LogModule.i("connDevice: 设备已连接");
+            Log.e("MokoSupport", "connDevice: 设备已连接");
             return;
         }
         final MokoConnStateHandler gattCallback = MokoConnStateHandler.getInstance();
@@ -221,12 +221,12 @@ public class MokoSupport implements MokoResponseCallback {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    LogModule.i("开始尝试连接");
+                    Log.e("MokoSupport", "开始尝试连接");
                     mBluetoothGatt = (new BleConnectionCompat(context)).connectGatt(device, false, gattCallback);
                 }
             });
         } else {
-            LogModule.i("获取蓝牙设备失败");
+            Log.e("MokoSupport", "获取蓝牙设备失败");
         }
     }
 
