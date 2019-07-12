@@ -27,7 +27,7 @@ import com.moko.support.entity.DeviceInfo;
 import org.json.JSONException;
 
 public class MainActivity extends AppCompatActivity {
-    private int ledLightingTime = 40;
+    private int ledLightingTime = 60 * 3;
 
     private TextView tv_bt;
     private DeviceInfo targetDevice;

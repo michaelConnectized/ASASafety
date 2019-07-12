@@ -94,7 +94,7 @@ public class SafetyApiConnectionAdaptor extends ApiConnectionAdaptor {
             if (smartag.isSent()) {
                 continue;
             }
-            String postData = getJsonPostData(localMacAddress, SafetyObjectManager.getWorkerCardId(smartag), smartag.issueMessage);
+            String postData = getJsonPostData(localMacAddress, SafetyObjectManager.getWorkerCardId(smartag), smartag.issueMessage.toString());
             if (addAlert(postData)) {
                 SafetyObjectManager.filteredVirtualSmartags.get(i).setSent(true);
             }

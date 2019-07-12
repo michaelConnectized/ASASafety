@@ -82,17 +82,22 @@ public class SafetyObjectManager {
 
     public static boolean isFitDangerZone(DeviceInfo deviceInfo, String localMacAddress) {
         boolean isFitDangerZone = false;
+        boolean isInDisallowTradeCodes;
+        boolean isInDisallowWorkerCardIds;
         boolean isTargetSmartag;
         boolean isFitRssiConditions;
         boolean isInScanTime;
 
         for (DangerZone dangerZone:dangerZoneList) {
-            isTargetSmartag = isInDisallowTradeCodes(dangerZone, deviceInfo) || isInDisallowWorkerCardIds(dangerZone, deviceInfo);
+            isInDisallowTradeCodes = isInDisallowTradeCodes(dangerZone, deviceInfo);
+            isInDisallowWorkerCardIds = isInDisallowWorkerCardIds(dangerZone, deviceInfo);
+            isTargetSmartag = isInDisallowTradeCodes || isInDisallowWorkerCardIds;
             isFitRssiConditions = isFitRssiConditions(dangerZone, deviceInfo, localMacAddress);
             isInScanTime = isScanTime(dangerZone);
             isFitDangerZone = isTargetSmartag && isFitRssiConditions && isInScanTime;
             if (isFitDangerZone) {
-                deviceInfo.issueMessage += ", Mac: "+deviceInfo.mac + ", Zone Name: "+dangerZone.getName();
+                deviceInfo.putIssueMessage("mac", deviceInfo.mac);
+                deviceInfo.putIssueMessage("zoneName", dangerZone.getName());
                 break;
             }
         }
@@ -104,7 +109,7 @@ public class SafetyObjectManager {
         for (String tradeCode:dangerZone.getDisallowTradeCodes()) {
             if (tradeCode.equals(getTradeCode(deviceInfo))) {
                 isInDisallowTradeCodes = true;
-                deviceInfo.issueMessage = "In Disallow Trade Codes: "+tradeCode;
+                deviceInfo.putIssueMessage("disallowTradeCodes", tradeCode);
                 break;
             }
         }
@@ -127,7 +132,7 @@ public class SafetyObjectManager {
         for (String workerCardId:dangerZone.getDisallowWorkerCardIds()) {
             if (workerCardId.equals(getWorkerCardId(deviceInfo))) {
                 isInDisallowWorkerCardIds = true;
-                deviceInfo.issueMessage = "Disallow Worker Card Id: "+workerCardId;
+                deviceInfo.putIssueMessage("disallowWorkerCardId", workerCardId);
                 break;
             }
         }
@@ -153,7 +158,8 @@ public class SafetyObjectManager {
                 case "lte": isFitRssiConditions = deviceInfo.rssi <= condition.getRssi(); break;
             }
             if (isFitRssiConditions) {
-                deviceInfo.issueMessage += ", "+condition.getOp()+" "+condition.getRssi();
+                deviceInfo.putIssueMessage("conditionOpt", condition.getOp());
+                deviceInfo.putIssueMessage("conditionRssi", condition.getRssi());
                 break;
             }
         }

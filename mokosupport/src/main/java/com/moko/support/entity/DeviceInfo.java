@@ -1,6 +1,12 @@
 package com.moko.support.entity;
 
 
+import android.util.Log;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.Serializable;
 
 import no.nordicsemi.android.support.v18.scanner.ScanRecord;
@@ -16,7 +22,7 @@ public class DeviceInfo implements Serializable {
     public int rssi;
     public String mac;
     public ScanRecord scanRecord;
-    public String issueMessage = "";
+    public JSONObject issueMessage = new JSONObject();
 
     @Override
     public String toString() {
@@ -38,5 +44,13 @@ public class DeviceInfo implements Serializable {
 
     public String getMacShortForm() {
         return mac.replace(":", "").toLowerCase();
+    }
+
+    public void putIssueMessage(String key, Object value) {
+        try {
+            issueMessage.put(key, value);
+        } catch (JSONException e) {
+            Log.e("DeviceInfo", e.toString());
+        }
     }
 }
