@@ -181,6 +181,14 @@ public class MokoSupportManager {
         Log.e("asasafety", "--------------------------------------------------------");
     }
 
+    public void unregisterReceiver() {
+        mokoSupportAdaptor.unregisterReceiver();
+    }
+
+    public void unBindService() {
+        mokoSupportAdaptor.unBindService();
+    }
+
     public void updateUI() {
         String list = "";
         if (!smartagQueue.isEmpty())

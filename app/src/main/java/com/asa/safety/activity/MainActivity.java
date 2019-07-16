@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
     private MokoSupportManager mokoManager;
     private CentralTimerThread centralTimerThread;
 
+    private boolean CentralTimerThreadStarted = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,17 +48,19 @@ public class MainActivity extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         Fabric.with(this, new Crashlytics());
-        initVar();
-        requestPermission();
-        initMacAddress();
-        initService();
-        SafetyObjectManager.checkAndInitList();
-        AttendObjectManager.checkAndInitList();
         try {
+            initVar();
+            requestPermission();
+            initMacAddress();
+            initService();
+            SafetyObjectManager.checkAndInitList();
+            AttendObjectManager.checkAndInitList();
+
             initTimeEvent();
             startScan();
         } catch (Exception e) {
             Log.e("TestingUse", e.toString());
+            finish();
         }
     }
 
@@ -74,6 +78,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void initTimeEvent() throws JSONException {
+        if (CentralTimerThreadStarted) {
+            return;
+        }
+
         centralTimerThread.startThread();
         centralTimerThread.applyTimerEvent(new TakeAttendanceEvent(attendApiConnectionAdaptor, Utils.getMacFromSharedPreference(this)));
         centralTimerThread.applyTimerEvent(new GetDangerZoneEvent(this));
@@ -81,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         centralTimerThread.applyTimerEvent(new AlertSmartagEvent(mokoManager));
         centralTimerThread.applyTimerEvent(new AlertVirtualSmartagEvent(safetyApiConnectionAdaptor, Utils.getMacFromSharedPreference(this)));
         centralTimerThread.applyTimerEvent(new RefleshBluetoothEvent(mokoManager));
+        CentralTimerThreadStarted = true;
     }
 
     public void requestPermission() {
@@ -113,7 +122,17 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onDestroy() {
-        mokoManager.stopScan();
         super.onDestroy();
+        mokoManager.stopScan();
+        mokoManager.unregisterReceiver();
+        mokoManager.unBindService();
+        centralTimerThread.stopThread();
+        AttendObjectManager.getMyLocationManager().stopGpsService();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        finish();
     }
 }

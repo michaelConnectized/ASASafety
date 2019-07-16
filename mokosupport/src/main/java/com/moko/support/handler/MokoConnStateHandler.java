@@ -71,22 +71,22 @@ public class MokoConnStateHandler extends BluetoothGattCallback {
     @Override
     public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic) {
         super.onCharacteristicChanged(gatt, characteristic);
-        LogModule.e("onCharacteristicChanged");
-        LogModule.e("device to app : " + MokoUtils.bytesToHexString(characteristic.getValue()));
+//        LogModule.e("onCharacteristicChanged");
+//        LogModule.e("device to app : " + MokoUtils.bytesToHexString(characteristic.getValue()));
         mMokoResponseCallback.onCharacteristicChanged(characteristic, characteristic.getValue());
     }
 
     @Override
     public void onCharacteristicWrite(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic, int status) {
         super.onCharacteristicWrite(gatt, characteristic, status);
-        LogModule.e("device to app : " + MokoUtils.bytesToHexString(characteristic.getValue()));
+//        LogModule.e("device to app : " + MokoUtils.bytesToHexString(characteristic.getValue()));
         mMokoResponseCallback.onCharacteristicWrite(characteristic.getValue());
     }
 
     @Override
     public void onCharacteristicRead(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic, int status) {
         super.onCharacteristicRead(gatt, characteristic, status);
-        LogModule.e("device to app : " + MokoUtils.bytesToHexString(characteristic.getValue()));
+//        LogModule.e("device to app : " + MokoUtils.bytesToHexString(characteristic.getValue()));
         mMokoResponseCallback.onCharacteristicRead(characteristic.getValue());
     }
 

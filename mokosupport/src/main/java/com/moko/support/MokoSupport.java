@@ -499,7 +499,7 @@ public class MokoSupport implements MokoResponseCallback {
             return;
         }
         OrderTask orderTask = mQueue.peek();
-        LogModule.i("device to app notify : " + orderTask.orderType.getName());
+//        LogModule.i("device to app notify : " + orderTask.orderType.getName());
         orderTask.orderStatus = OrderTask.ORDER_STATUS_SUCCESS;
         mQueue.poll();
         executeTask(orderTask.mokoOrderTaskCallback);

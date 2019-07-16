@@ -37,7 +37,7 @@ public class AttendObjectManager {
         int helmetVersionNumber = getHelmetVersionNumber(deviceInfo);
         if (isHelmet(helmetVersionNumber)) {
             int txPwr = getTxPower(deviceInfo, helmetVersionNumber);
-            if (txPwr!=0)
+            if (txPwr!=-999)
                 filteredAttendanceList.add(deviceInfoToAttendance(deviceInfo, txPwr, myLocationManager.getLocation(), localMacAddress));
         }
     }
@@ -55,8 +55,8 @@ public class AttendObjectManager {
         isHelmetVersion1 = beaconAnalyser.getDeviceCode()==BeaconAnalyser.HELMETV1;
 
         if (isHelmetVersion3) versionNumebr = 3;
-        if (isHelmetVersion2) versionNumebr = 2;
-        if (isHelmetVersion1) versionNumebr = 1;
+        else if (isHelmetVersion2) versionNumebr = 2;
+        else if (isHelmetVersion1) versionNumebr = 1;
 
         return versionNumebr;
     }

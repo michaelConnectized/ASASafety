@@ -93,6 +93,15 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
         activity.bindService(intent, getServiceConnection(), BIND_AUTO_CREATE);
     }
 
+    public void unBindService() {
+        try {
+            activity.unbindService(getServiceConnection());
+        } catch (Exception e) {
+            Log.e(tag, e.toString());
+        }
+
+    }
+
     public boolean isBluetoothOn() {
         return MokoSupport.getInstance().isBluetoothOpen();
     }
@@ -110,7 +119,8 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
     }
 
     public void stopScan() {
-        mokoService.stopScanDevice();
+        if (mokoService!=null)
+         mokoService.stopScanDevice();
     }
 
     public List<DeviceInfo> getDeviceInfoList() {
@@ -188,6 +198,15 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
         };
     }
 
+    public void unregisterReceiver() {
+        try {
+            activity.unregisterReceiver(mReceiver);
+        } catch (Exception e) {
+            Log.e(tag, e.toString());
+        }
+
+    }
+
     private BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -207,14 +226,14 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
                     responseTimeoutEvent(intent);
                 }
                 if (MokoConstants.ACTION_RESPONSE_FINISH.equals(action)) {
-//                    Log.e(tag, "ACTION_RESPONSE_FINISH");
+                    Log.e(tag, "ACTION_RESPONSE_FINISH");
                 }
                 if (MokoConstants.ACTION_RESPONSE_SUCCESS.equals(action)) {
                     Log.e(tag, "ACTION_RESPONSE_SUCCESS");
                     responseSuccessEvent(intent);
                 }
                 if (BluetoothAdapter.ACTION_STATE_CHANGED.equals(action)) {
-//                    Log.e("asasafety", "ACTION_STATE_CHANGED");
+                    Log.e("asasafety", "ACTION_STATE_CHANGED");
                 }
             }
         }
@@ -239,30 +258,33 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
         int responseType = response.responseType;
         byte[] value = response.responseValue;
 
-        Log.e(tag, ""+orderType);
+//        Log.e(tag, ""+orderType);
         switch (orderType) {
             case lockState:
                 String valueStr = MokoUtils.bytesToHexString(value);
                 if ("00".equals(valueStr)) {
                     if (!TextUtils.isEmpty(unLockResponse)) {
                         unLockResponse = "";
-                        mokoService.sendOrder(mokoService.getUnLock());
-                    } else {
-                        mokoService.sendOrder(mokoService.getUnLock());
                     }
+                    Log.e(tag, ""+orderType+": Get unlock data");
+                    mokoService.sendOrder(mokoService.getUnLock());
                 } else {
+                    Log.e(tag, ""+orderType+": Ready to send data");
                     setStatus(Status.READY_TO_SEND);
                 }
                 break;
             case unLock:
                 if (responseType == OrderTask.RESPONSE_TYPE_READ) {
+                    Log.e(tag, ""+orderType+": Send password to unlock");
                     sendPasswordToUnlock(value);
                 }
                 if (responseType == OrderTask.RESPONSE_TYPE_WRITE) {
+                    Log.e(tag, ""+orderType+": Unlock Successful");
                     unlockSuccessEvent();
                 }
                 break;
             case writeConfig:
+                Log.e(tag, ""+orderType+": Send turning on LED request successful");
                 setStatus(Status.WRITE_SUCCESSFUL);
             default:
         }

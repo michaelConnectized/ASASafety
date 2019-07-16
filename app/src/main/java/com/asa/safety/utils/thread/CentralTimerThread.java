@@ -37,7 +37,7 @@ public class CentralTimerThread extends Thread {
     }
 
     private void triggerEvents() {
-        Log.e("CentralTimerThread", "Trigger");
+        Log.e("CentralTimerThread", "Times: "+currentTime);
         for (int i=0; i<timerEventList.size(); i++) {
             timerEventList.get(i).triggerEvent(currentTime);
         }
@@ -47,5 +47,9 @@ public class CentralTimerThread extends Thread {
         timerEvent.setCentralTimerInitTime(currentTime);
 
         timerEventList.add(timerEvent);
+    }
+
+    public void stopThread() {
+        again = false;
     }
 }

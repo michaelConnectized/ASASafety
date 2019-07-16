@@ -53,7 +53,7 @@ public class GpsBackgroundService extends Service implements GpsStatus.Listener 
 
         @Override
         public void onLocationChanged(Location location) {
-            Log.d(TAG, "LocationChange received: " + location);
+//            Log.d(TAG, "LocationChange received: " + location);
 
             if (!isBetterLocation(location, mLastLocation))
                 return;
@@ -64,22 +64,22 @@ public class GpsBackgroundService extends Service implements GpsStatus.Listener 
 
         @Override
         public void onProviderDisabled(String provider) {
-            Log.e(TAG, "onProviderDisabled: " + provider);
+//            Log.e(TAG, "onProviderDisabled: " + provider);
         }
 
         @Override
         public void onProviderEnabled(String provider) {
-            Log.e(TAG, "onProviderEnabled: " + provider);
+//            Log.e(TAG, "onProviderEnabled: " + provider);
         }
 
         @Override
         public void onStatusChanged(String provider, int status, Bundle extras) {
-            Log.e(TAG, "onStatusChanged: " + status);
+//            Log.e(TAG, "onStatusChanged: " + status);
         }
     }
 
     private void updateLocation(Location location) {
-        Log.i(TAG, "LocationChanged: " + location);
+//        Log.i(TAG, "LocationChanged: " + location);
         Intent intent = new Intent();
         intent.setAction(ACTION_STRING_ACTIVITY);
         intent.putExtra("Lat", location.getLatitude());

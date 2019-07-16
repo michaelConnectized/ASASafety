@@ -157,8 +157,12 @@ public class MyLocationManager {
     }
 
     public void stopGpsService() {
-        activity.unbindService(serviceConnection);
-        gpsService.stopTracking();
+        try {
+            activity.unbindService(serviceConnection);
+            gpsService.stopTracking();
+        } catch (Exception e) {
+
+        }
     }
 
     public Location getLocation() {
