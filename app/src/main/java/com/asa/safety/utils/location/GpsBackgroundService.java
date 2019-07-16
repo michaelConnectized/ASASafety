@@ -244,7 +244,7 @@ public class GpsBackgroundService extends Service implements GpsStatus.Listener 
     }
 
     public Location getmLastLocation() {
-        Log.e(TAG, "getmLastLocation()");
+//        Log.e(TAG, "getmLastLocation()");
         if( mLastLocation == null )
             Log.e(TAG, "mLastLocation == null");
         return mLastLocation;

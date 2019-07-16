@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: com.crashlytics.sdk.android:crashlytics-core:2.7.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/966a487eac7997a8d206aeeee89c7a1a/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/966a487eac7997a8d206aeeee89c7a1a/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

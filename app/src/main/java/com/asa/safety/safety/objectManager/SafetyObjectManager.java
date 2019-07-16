@@ -25,7 +25,8 @@ public class SafetyObjectManager {
 
     public static void minorRemainLightingTimeByOne() {
         for (int i = 0; i< filteredSmartags.size(); i++) {
-            filteredSmartags.get(i).minorRemainLightingEndTime();
+            if (filteredSmartags.get(i)!=null)
+                filteredSmartags.get(i).minorRemainLightingEndTime();
         }
     }
 

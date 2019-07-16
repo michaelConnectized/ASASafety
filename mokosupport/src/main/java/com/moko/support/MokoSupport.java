@@ -221,7 +221,7 @@ public class MokoSupport implements MokoResponseCallback {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    Log.e("MokoSupport", "开始尝试连接");
+//                    Log.e("MokoSupport", "开始尝试连接");
                     mBluetoothGatt = (new BleConnectionCompat(context)).connectGatt(device, false, gattCallback);
                 }
             });

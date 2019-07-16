@@ -5,7 +5,7 @@ import com.moko.support.entity.DeviceInfo;
 
 public class Smartag extends DeviceInfo {
     private int remainConnectionTimes = 3;
-    private int remainLightingEndTime = 60 * 3 - 10;
+    private int remainLightingEndTime = 50 - 10;
 
     public void minorRemainConnectionTimes() {
         remainConnectionTimes--;

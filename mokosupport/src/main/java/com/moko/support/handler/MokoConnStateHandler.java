@@ -41,9 +41,9 @@ public class MokoConnStateHandler extends BluetoothGattCallback {
     @Override
     public void onConnectionStateChange(BluetoothGatt gatt, int status, int newState) {
         super.onConnectionStateChange(gatt, status, newState);
-        LogModule.e("onConnectionStateChange");
-        LogModule.e("status : " + status);
-        LogModule.e("newState : " + newState);
+//        LogModule.e("onConnectionStateChange");
+//        LogModule.e("status : " + status);
+//        LogModule.e("newState : " + newState);
         if (newState == BluetoothProfile.STATE_CONNECTED) {
             if (status == BluetoothGatt.GATT_SUCCESS) {
                 mHandler.sendEmptyMessage(MokoSupport.HANDLER_MESSAGE_WHAT_CONNECTED);
@@ -59,8 +59,8 @@ public class MokoConnStateHandler extends BluetoothGattCallback {
     @Override
     public void onServicesDiscovered(BluetoothGatt gatt, int status) {
         super.onServicesDiscovered(gatt, status);
-        LogModule.e("onServicesDiscovered");
-        LogModule.e("status : " + status);
+//        LogModule.e("onServicesDiscovered");
+//        LogModule.e("status : " + status);
         if (status == BluetoothGatt.GATT_SUCCESS) {
             mHandler.sendEmptyMessage(MokoSupport.HANDLER_MESSAGE_WHAT_SERVICES_DISCOVERED);
         } else {

@@ -42,6 +42,7 @@ public class AttendApiConnectionAdaptor extends ApiConnectionAdaptor {
         }
         List<Attendance> postingAttendanceList = new ArrayList<>(AttendObjectManager.filteredAttendanceList);
         String postData = getJsonPostData(postingAttendanceList);
+        Log.e("testAttend", postData);
         if (postAttendance(postData)) {
             for (Attendance attendance:postingAttendanceList) {
                 AttendObjectManager.filteredAttendanceList.remove(attendance);

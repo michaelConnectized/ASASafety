@@ -13,6 +13,7 @@ import com.asa.safety.utils.Utils;
 import com.moko.support.entity.DeviceInfo;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class MokoSupportManager {
@@ -21,8 +22,9 @@ public class MokoSupportManager {
     private List<Smartag> smartagQueue;
     private Smartag targetSmartag;
 
-    private boolean isTryingConnection = false;
-    private boolean isSent = false;
+    public boolean isTryingConnection = false;
+    public boolean isSent = false;
+    public long lastConnectionTime = 0;
 
     public MokoSupportManager(Activity activity) {
         this.activity = activity;
@@ -153,6 +155,7 @@ public class MokoSupportManager {
         smartag.minorRemainConnectionTimes();
         mokoSupportAdaptor.connectDevice(smartag);
         isSent = true;
+        lastConnectionTime = new Date().getTime();
     }
 
     public void simpleConnect(DeviceInfo deviceInfo) {

@@ -1,6 +1,7 @@
 package com.asa.safety.safety.event;
 
 import android.app.Activity;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.asa.safety.safety.model.SafetyApiConnectionAdaptor;

@@ -1,6 +1,7 @@
 package com.asa.safety.safety.event;
 
 import android.app.Activity;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.asa.safety.safety.model.SafetyApiConnectionAdaptor;
@@ -19,7 +20,7 @@ public class GetDangerZoneEvent extends TimerEvent {
     protected String eventName = "GetDangerZoneEvent";
 
     private final int definition_non_existed_time = 5;
-    private final int definition_existed_time = 3 * 60;
+    private final int definition_existed_time = 60 * 3;
 
     private SafetyApiConnectionAdaptor safetyApiConnectionAdaptor;
     private JSONObject postData;

@@ -1,15 +1,20 @@
 package com.asa.safety.utils.location;
 
 import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.graphics.Color;
 import android.location.Location;
 import android.os.Build;
 import android.os.IBinder;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 
@@ -27,6 +32,8 @@ public class MyLocationManager {
 
     private final String tag = "MyLocationManager";
     private Activity activity;
+
+    private boolean serviceStarted = false;
 
     public GpsBackgroundService gpsService;
     private Location mLocation;
@@ -58,7 +65,7 @@ public class MyLocationManager {
         activity.bindService(gpsIntent, serviceConnection, Context.BIND_AUTO_CREATE);
 
         //STEP1: Create a broadcast receiver
-        if (gpsService!=null)
+        if (gpsService!=null) {
             gpsService.startTracking();
             activityReceiver = new BroadcastReceiver() {
                 @Override
@@ -66,10 +73,13 @@ public class MyLocationManager {
                     long currentTime = new Date().getTime();
                     //Log.d("Testttty", String.valueOf(currentTime-lastLocUpdateTime));
                     lastLocUpdateTime = currentTime;
-                    if (gpsService!=null)
+                    if (gpsService != null)
                         mLocation = gpsService.getmLastLocation();
+                    serviceSettingFor8();
+
                 }
             };
+        }
 
         //STEP2: register the receiver
         if (activityReceiver != null) {
@@ -78,6 +88,41 @@ public class MyLocationManager {
             //Map the intent filter to the receiver
             activity.registerReceiver(activityReceiver, intentFilter);
         }
+    }
+
+    public void serviceSettingFor8(){
+        if (serviceStarted)
+            return;
+
+        if (gpsService==null)
+            return;
+
+        if (Build.VERSION.SDK_INT >= 26) {
+            gpsService.startForeground(1, getNoti());
+        }
+        serviceStarted = true;
+    }
+
+    private Notification getNoti() {
+        if (Build.VERSION.SDK_INT >= 26) {
+            String NOTIFICATION_CHANNEL_ID = "com.asa.safety";
+            String channelName = "My Background Service";
+            NotificationChannel chan = new NotificationChannel(NOTIFICATION_CHANNEL_ID, channelName, NotificationManager.IMPORTANCE_NONE);
+            chan.setLightColor(Color.BLUE);
+            chan.setLockscreenVisibility(Notification.VISIBILITY_PRIVATE);
+            NotificationManager manager = (NotificationManager) activity.getSystemService(Context.NOTIFICATION_SERVICE);
+            assert manager != null;
+            manager.createNotificationChannel(chan);
+
+            NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(activity, NOTIFICATION_CHANNEL_ID);
+            Notification notification = notificationBuilder.setOngoing(true)
+                    .setContentTitle("GPS")
+                    .setPriority(NotificationManager.IMPORTANCE_MIN)
+                    .setCategory(Notification.CATEGORY_SERVICE)
+                    .build();
+            return notification;
+        }
+        return null;
     }
 
     public long getLastLocUpdateTime() {
@@ -94,6 +139,7 @@ public class MyLocationManager {
             String name = className.getClassName();
             if (name.endsWith("GpsBackgroundService")) {
                 gpsService = ((GpsBackgroundService.LocationServiceBinder) service).getService();
+                serviceSettingFor8();
                 mLocation = gpsService.getmLastLocation();
             }
         }

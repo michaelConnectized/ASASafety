@@ -22,12 +22,15 @@ import com.asa.safety.utils.permission.Permission;
 import com.asa.safety.R;
 import com.asa.safety.utils.thread.CentralTimerThread;
 import com.asa.safety.utils.Utils;
+import com.asa.safety.utils.thread.event.RefleshBluetoothEvent;
+import com.crashlytics.android.Crashlytics;
 import com.moko.support.entity.DeviceInfo;
 
+import io.fabric.sdk.android.Fabric;
 import org.json.JSONException;
 
 public class MainActivity extends AppCompatActivity {
-    private int ledLightingTime = 60 * 3;
+    private int ledLightingTime = 50;
 
     private TextView tv_bt;
     private DeviceInfo targetDevice;
@@ -42,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
+        Fabric.with(this, new Crashlytics());
         initVar();
         requestPermission();
         initMacAddress();
@@ -66,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initService() {
         AttendObjectManager.getMyLocationManager().enableGpsService();
+
     }
 
     public void initTimeEvent() throws JSONException {
@@ -75,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         centralTimerThread.applyTimerEvent(new GetWorkerEvent(this));
         centralTimerThread.applyTimerEvent(new AlertSmartagEvent(mokoManager));
         centralTimerThread.applyTimerEvent(new AlertVirtualSmartagEvent(safetyApiConnectionAdaptor, Utils.getMacFromSharedPreference(this)));
+        centralTimerThread.applyTimerEvent(new RefleshBluetoothEvent(mokoManager));
     }
 
     public void requestPermission() {

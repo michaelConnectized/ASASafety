@@ -1,5 +1,7 @@
 package com.asa.safety.utils.thread;
 
+import android.util.Log;
+
 import com.asa.safety.utils.thread.event.TimerEvent;
 
 import java.util.ArrayList;
@@ -35,6 +37,7 @@ public class CentralTimerThread extends Thread {
     }
 
     private void triggerEvents() {
+        Log.e("CentralTimerThread", "Trigger");
         for (int i=0; i<timerEventList.size(); i++) {
             timerEventList.get(i).triggerEvent(currentTime);
         }

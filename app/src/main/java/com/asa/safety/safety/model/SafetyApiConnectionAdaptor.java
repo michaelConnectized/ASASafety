@@ -85,7 +85,7 @@ public class SafetyApiConnectionAdaptor extends ApiConnectionAdaptor {
         return lastUpdated;
     }
 
-    public void sendAlertsToServer(String localMacAddress) {
+    public void sendAlertsToServerIfNotEmpty(String localMacAddress) {
         if (SafetyObjectManager.filteredVirtualSmartags.isEmpty()) {
             return;
         }

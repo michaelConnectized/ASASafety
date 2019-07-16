@@ -1,5 +1,7 @@
 package com.asa.safety.safety.event;
 
+import android.util.Log;
+
 import com.asa.safety.safety.model.SafetyApiConnectionAdaptor;
 import com.asa.safety.safety.objectManager.SafetyObjectManager;
 import com.asa.safety.utils.thread.event.TimerEvent;
@@ -19,6 +21,6 @@ public class AlertVirtualSmartagEvent extends TimerEvent {
     protected void event() {
         SafetyObjectManager.minorRemainNextAlertTimeByOne();
         SafetyObjectManager.removeOldVirtualSmartagRecords();
-        safetyApiConnectionAdaptor.sendAlertsToServer(localMacAddress);
+        safetyApiConnectionAdaptor.sendAlertsToServerIfNotEmpty(localMacAddress);
     }
 }

@@ -2,6 +2,7 @@ package com.asa.safety.utils.thread.event;
 
 
 import android.os.Handler;
+import android.util.Log;
 
 public abstract class TimerEvent {
     protected int centralTimerInitTime;
