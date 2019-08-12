@@ -14,14 +14,18 @@ import android.util.Log;
 
 import com.asa.safety.R;
 import com.asa.safety.safety.service.MokoService;
+import com.asa.safety.utils.Utils;
 import com.moko.support.MokoConstants;
 import com.moko.support.MokoSupport;
 import com.moko.support.callback.MokoScanDeviceCallback;
 import com.moko.support.entity.DeviceInfo;
 import com.moko.support.entity.OrderType;
+import com.moko.support.entity.SlotEnum;
 import com.moko.support.task.OrderTask;
 import com.moko.support.task.OrderTaskResponse;
 import com.moko.support.utils.MokoUtils;
+
+import org.json.JSONArray;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,6 +52,9 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
     private onStatusChangedListener onStatusChangedListener;
     private onScanDeviceListener onScanDeviceListener;
 
+    private List<String> editedDeviceList;
+    private String currentDevice = "";
+
     public MokoSupportAdaptor(Activity activity) {
         super();
         this.activity = activity;
@@ -55,6 +62,28 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
         initMokoSupportApi();
         initCurrentConnectionStatus();
         initEmptyListener();
+        initEditedDeviceList();
+    }
+
+    private void initEditedDeviceList() {
+        editedDeviceList = new ArrayList<>();
+        try {
+            JSONArray ja = new JSONArray(Utils.getSharePreference(activity).getString("editedDeviceList", ""));
+            int len = ja.length();
+            for (int i=0;i<len;i++){
+                editedDeviceList.add(ja.get(i).toString());
+            }
+        } catch (Exception e) {
+            Log.e(tag, e.toString());
+        }
+    }
+
+    private void saveEditedDevices() {
+        JSONArray jsonArray = new JSONArray();
+        for (String device: editedDeviceList) {
+            jsonArray.put(device);
+        }
+        Utils.getSharePreference(activity).edit().putString("editedDeviceList", jsonArray.toString()).commit();
     }
 
     private void initMokoSupportApi() {
@@ -129,6 +158,7 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
 
     public void connectDevice(DeviceInfo deviceInfo) {
         Log.e(tag, "Try connect to: "+deviceInfo.mac);
+        currentDevice = deviceInfo.mac;
         mokoService.mHandler.removeMessages(0);
         mokoService.connDevice(deviceInfo.mac);
     }
@@ -149,12 +179,24 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
         requestList.add(mokoService.setLEDInfo(true, true, time_second*1000, 25000, 50));
     }
 
+    public void setEditTxPowerRequest(int txPwr) {
+        byte[] txPowerBytes = MokoUtils.toByteArray(txPwr, 1);
+        byte[] advTxPowerBytes = MokoUtils.toByteArray(txPwr, 1);
+
+        requestList.add(mokoService.setSlot(SlotEnum.SLOT_1));
+        requestList.add(mokoService.setRadioTxPower(txPowerBytes));
+        requestList.add(mokoService.setAdvTxPower(advTxPowerBytes));
+    }
+
     public void setTurnOffRequest() {
         requestList.add(mokoService.setClose());
     }
 
     public void sendRequest() {
         mokoService.sendOrder(requestList.toArray(new OrderTask[requestList.size()]));
+        editedDeviceList.add(currentDevice);
+        saveEditedDevices();
+        Utils.saveInTxt(currentDevice+"\r\n");
     }
 
     @Override

@@ -101,7 +101,8 @@ public class MokoSupportManager {
 
     public void setLedRequest(int second) {
         mokoSupportAdaptor.initRequest();
-        mokoSupportAdaptor.setLedRequest(second);
+//        mokoSupportAdaptor.setLedRequest(second);
+        mokoSupportAdaptor.setEditTxPowerRequest(-8);
     }
 
     public void setCloseRequest() {

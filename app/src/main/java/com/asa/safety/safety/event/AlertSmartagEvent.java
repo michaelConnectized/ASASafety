@@ -23,10 +23,8 @@ public class AlertSmartagEvent extends TimerEvent {
         if (isTimeout()) {
             mokoSupportManager.isTryingConnection = false;
         }
-        SafetyObjectManager.minorRemainLightingTimeByOne();
         SafetyObjectManager.removeOldSmartagRecords();
         mokoSupportManager.tryToTakeSmartagToConnect();
-        mokoSupportManager.updateUI();
     }
 
     private boolean isTimeout() {

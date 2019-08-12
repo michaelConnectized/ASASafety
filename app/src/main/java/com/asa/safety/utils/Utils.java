@@ -8,6 +8,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Environment;
+import android.util.Log;
 
 import com.asa.safety.R;
 
@@ -15,7 +16,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -151,5 +154,28 @@ public class Utils {
     public static String getCurrentDatetime() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
         return sdf.format(new Date());
+    }
+
+    public static void saveInTxt(String content) {
+        try {
+            File path = new File(Environment.getExternalStorageDirectory()+"/infosmart");
+            if (!path.exists()) {
+                path.mkdirs();
+            }
+
+            File file = new File(Environment.getExternalStorageDirectory()+"/infosmart"+"/"+"Record.txt");
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+
+            if (file.exists()) {
+                FileOutputStream fOut = new FileOutputStream(file, true);
+                OutputStreamWriter writer = new OutputStreamWriter(fOut);
+                writer.append(content);
+                writer.close();
+            }
+        } catch (Exception e) {
+            Log.d("Files", e.toString());
+        }
     }
 }

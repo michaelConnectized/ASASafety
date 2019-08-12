@@ -83,11 +83,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         centralTimerThread.startThread();
-        centralTimerThread.applyTimerEvent(new TakeAttendanceEvent(attendApiConnectionAdaptor, Utils.getMacFromSharedPreference(this)));
-        centralTimerThread.applyTimerEvent(new GetDangerZoneEvent(this));
-        centralTimerThread.applyTimerEvent(new GetWorkerEvent(this));
+//        centralTimerThread.applyTimerEvent(new TakeAttendanceEvent(attendApiConnectionAdaptor, Utils.getMacFromSharedPreference(this)));
+//        centralTimerThread.applyTimerEvent(new GetDangerZoneEvent(this));
+//        centralTimerThread.applyTimerEvent(new GetWorkerEvent(this));
         centralTimerThread.applyTimerEvent(new AlertSmartagEvent(mokoManager));
-        centralTimerThread.applyTimerEvent(new AlertVirtualSmartagEvent(safetyApiConnectionAdaptor, Utils.getMacFromSharedPreference(this)));
+//        centralTimerThread.applyTimerEvent(new AlertVirtualSmartagEvent(safetyApiConnectionAdaptor, Utils.getMacFromSharedPreference(this)));
         centralTimerThread.applyTimerEvent(new RefleshBluetoothEvent(mokoManager));
         CentralTimerThreadStarted = true;
     }
@@ -114,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void startScan() {
         new Handler().postDelayed(() -> {
+            //TODO
             mokoManager.setLedRequest(ledLightingTime);
             mokoManager.startScan();
         }, 1000);
