@@ -80,19 +80,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="039d029c-b9f9-4dfc-82c8-c9e0a737df94" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/activity/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/activity/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/event/AlertSmartagEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/event/AlertSmartagEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/mokoSupportAdaptor/MokoSupportAdaptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/mokoSupportAdaptor/MokoSupportAdaptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mokosupport/src/main/java/com/moko/support/MokoSupport.java" beforeDir="false" afterPath="$PROJECT_DIR$/mokosupport/src/main/java/com/moko/support/MokoSupport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/mokoSupportAdaptor/MokoSupportManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/mokoSupportAdaptor/MokoSupportManager.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -115,10 +103,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/permission/Permission.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/activity/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+            <state relative-caret-position="327">
+              <caret line="95" column="36" lean-forward="true" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -127,22 +115,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/activity/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="38" column="23" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/mokoSupportAdaptor/MokoSupportAdaptor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="182" column="64" selection-start-line="182" selection-start-column="52" selection-end-line="182" selection-end-column="64" />
+            <state relative-caret-position="225">
+              <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4972#5019#0" />
@@ -156,6 +132,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
               <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/objectManager/SafetyObjectManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="249">
+              <caret line="87" column="32" lean-forward="true" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -175,8 +160,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/mokoSupportAdaptor/MokoSupportManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="103" column="33" selection-start-line="103" selection-start-column="33" selection-end-line="103" selection-end-column="33" />
+            <state relative-caret-position="272">
+              <caret line="71" column="34" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
               <folding>
                 <element signature="e#3305#3306#0" expanded="true" />
                 <element signature="e#3350#3351#0" expanded="true" />
@@ -188,8 +173,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/event/AlertSmartagEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="421">
+              <caret line="25" column="27" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -198,13 +183,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/event/GetDangerZoneEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+            <state relative-caret-position="68">
+              <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
-          <provider editor-type-id="android-manifest" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -237,7 +224,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>onServicesDiscovered</find>
       <find>startForegroundService</find>
       <find>GattService</find>
       <find>serviceConnection</find>
@@ -266,6 +252,7 @@
       <find>bind</find>
       <find>connect</find>
       <find>.add(</find>
+      <find>sa</find>
       <find>setLed</find>
     </findStrings>
     <replaceStrings>
@@ -326,7 +313,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/location/GpsBackgroundService.java" />
         <option value="$PROJECT_DIR$/mokosupport/src/main/java/com/moko/support/handler/MokoConnStateHandler.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/thread/CentralTimerThread.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/mokoSupportAdaptor/MokoSupportManager.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/location/MyLocationManager.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/permission/Permission.java" />
@@ -335,10 +321,11 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/Utils.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/safety/activity/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/mokoSupportAdaptor/MokoSupportAdaptor.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/mokoSupportAdaptor/MokoSupportManager.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="747" />
     <option name="width" value="1180" />
     <option name="height" value="728" />
@@ -399,6 +386,14 @@
               <item name="safety" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="safety" type="462c0819:PsiDirectoryNode" />
               <item name="mokoSupportAdaptor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ASASafety" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="safety" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="safety" type="462c0819:PsiDirectoryNode" />
+              <item name="objectManager" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ASASafety" type="1abcf292:AndroidViewProjectNode" />
@@ -661,7 +656,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" sideWeight="0.5020633" side_tool="true" weight="0.2707889" />
@@ -894,16 +889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/event/GetDangerZoneEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/location/GpsBackgroundService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1411">
@@ -1031,13 +1016,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/objectManager/SafetyObjectManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/model/SafetyApiConnectionAdaptor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -1081,16 +1059,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/event/AlertSmartagEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/utils/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1108,10 +1076,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/activity/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/event/GetDangerZoneEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/mokoSupportAdaptor/MokoSupportAdaptor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="38" column="23" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
+          <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4972#5019#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/event/AlertSmartagEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="25" column="27" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/activity/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="95" column="36" lean-forward="true" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1120,8 +1119,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/mokoSupportAdaptor/MokoSupportManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="103" column="33" selection-start-line="103" selection-start-column="33" selection-end-line="103" selection-end-column="33" />
+        <state relative-caret-position="272">
+          <caret line="71" column="34" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
           <folding>
             <element signature="e#3305#3306#0" expanded="true" />
             <element signature="e#3350#3351#0" expanded="true" />
@@ -1129,14 +1128,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/mokoSupportAdaptor/MokoSupportAdaptor.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/asa/safety/safety/objectManager/SafetyObjectManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="182" column="64" selection-start-line="182" selection-start-column="52" selection-end-line="182" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4972#5019#0" />
-          </folding>
+        <state relative-caret-position="249">
+          <caret line="87" column="32" lean-forward="true" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
         </state>
       </provider>
     </entry>

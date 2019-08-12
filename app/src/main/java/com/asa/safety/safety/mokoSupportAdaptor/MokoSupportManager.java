@@ -68,10 +68,10 @@ public class MokoSupportManager {
     }
 
     private void scannedEventForSafety(DeviceInfo deviceInfo) {
-        if (SafetyObjectManager.isFitDangerZone(deviceInfo, Utils.getMacFromSharedPreference(activity))) {
+//        if (SafetyObjectManager.isFitDangerZone(deviceInfo, Utils.getMacFromSharedPreference(activity))) {
             checkAndAppendToSmartagQueue(deviceInfo);
             SafetyObjectManager.checkAndAppendVirtualSmartagList(deviceInfo);
-        }
+//        }
     }
 
     private void scannedEventForAttend(DeviceInfo deviceInfo) {
