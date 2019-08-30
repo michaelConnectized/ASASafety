@@ -27,7 +27,9 @@ import com.moko.support.utils.MokoUtils;
 
 import org.json.JSONArray;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static android.content.Context.BIND_AUTO_CREATE;
@@ -55,6 +57,9 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
     private List<String> editedDeviceList;
     private String currentDevice = "";
 
+    private int setCount = 0;
+    int battery;
+
     public MokoSupportAdaptor(Activity activity) {
         super();
         this.activity = activity;
@@ -68,7 +73,9 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
     private void initEditedDeviceList() {
         editedDeviceList = new ArrayList<>();
         try {
-            JSONArray ja = new JSONArray(Utils.getSharePreference(activity).getString("editedDeviceList", ""));
+            String json = Utils.getSharePreference(activity).getString("editedDeviceList", "");
+            Log.e(tag, "Current json: "+json);
+            JSONArray ja = new JSONArray(json);
             int len = ja.length();
             for (int i=0;i<len;i++){
                 editedDeviceList.add(ja.get(i).toString());
@@ -84,6 +91,8 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
             jsonArray.put(device);
         }
         Utils.getSharePreference(activity).edit().putString("editedDeviceList", jsonArray.toString()).commit();
+        setCount++;
+        Log.e(tag, "device Put");
     }
 
     private void initMokoSupportApi() {
@@ -179,13 +188,14 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
         requestList.add(mokoService.setLEDInfo(true, true, time_second*1000, 25000, 50));
     }
 
-    public void setEditTxPowerRequest(int txPwr) {
-        byte[] txPowerBytes = MokoUtils.toByteArray(txPwr, 1);
-        byte[] advTxPowerBytes = MokoUtils.toByteArray(txPwr, 1);
+    public void setEditTxPowerRequest() {
+        int timeout = 30;
+        int advInterval = 1000;
+        int advTxPower = 0;
+        int txPower = 0;
 
-        requestList.add(mokoService.setSlot(SlotEnum.SLOT_1));
-        requestList.add(mokoService.setRadioTxPower(txPowerBytes));
-        requestList.add(mokoService.setAdvTxPower(advTxPowerBytes));
+        requestList.add(mokoService.setFastMode(true, timeout, advInterval, advTxPower, txPower));
+        requestList.add(mokoService.setSlowMode(advInterval, advTxPower, txPower));
     }
 
     public void setTurnOffRequest() {
@@ -196,7 +206,8 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
         mokoService.sendOrder(requestList.toArray(new OrderTask[requestList.size()]));
         editedDeviceList.add(currentDevice);
         saveEditedDevices();
-        Utils.saveInTxt(currentDevice+"\r\n");
+        Log.e(tag+"1", String.valueOf(setCount));
+        Utils.saveInTxt(currentDevice+",,"+battery+",0,b'ITT',"+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())+"\r\n");
     }
 
     @Override
@@ -206,9 +217,16 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
 
     @Override
     public void onScanDevice(DeviceInfo deviceInfo) {
-        onScanDeviceListener.onScan(deviceInfo);
-        if (!deviceInfoList.contains(deviceInfo))
+        if (!deviceInfoList.contains(deviceInfo)) {
+            if (editedDeviceList.contains(deviceInfo.mac)) {
+                return;
+            }
             deviceInfoList.add(deviceInfo);
+            onScanDeviceListener.onScan(deviceInfo);
+            Log.e(tag+"abc", deviceInfo.mac+" is scanned");
+            Log.e("deviceList", deviceInfoList.toString());
+        }
+
     }
 
     @Override
@@ -292,6 +310,10 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
         setStatus(Status.DISCONNECTED);
     }
 
+    private void askForBattery() {
+        mokoService.sendOrder(mokoService.getBattery());
+    }
+
 
     private String unLockResponse;
     private void responseSuccessEvent(Intent intent) {
@@ -312,7 +334,7 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
                     mokoService.sendOrder(mokoService.getUnLock());
                 } else {
                     Log.e(tag, ""+orderType+": Ready to send data");
-                    setStatus(Status.READY_TO_SEND);
+                    askForBattery();
                 }
                 break;
             case unLock:
@@ -328,6 +350,13 @@ public class MokoSupportAdaptor implements MokoScanDeviceCallback {
             case writeConfig:
                 Log.e(tag, ""+orderType+": Send turning on LED request successful");
                 setStatus(Status.WRITE_SUCCESSFUL);
+            case battery:
+                if (MokoUtils.bytesToHexString(response.responseValue).equals("eb69000100")) {
+                    return;
+                }
+                battery = Integer.parseInt(MokoUtils.bytesToHexString(response.responseValue), 16);
+                setStatus(Status.READY_TO_SEND);
+                break;
             default:
         }
     }

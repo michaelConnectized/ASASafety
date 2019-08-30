@@ -10,7 +10,7 @@ import java.util.Date;
 
 public class AlertSmartagEvent extends TimerEvent {
     protected String eventName = "AlertSmartagEvent";
-    private long timeout = 120 * 1000; //60s
+    private long timeout = 40 * 1000; //60s
 
     private MokoSupportManager mokoSupportManager;
 

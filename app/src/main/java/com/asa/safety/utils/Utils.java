@@ -163,7 +163,7 @@ public class Utils {
                 path.mkdirs();
             }
 
-            File file = new File(Environment.getExternalStorageDirectory()+"/infosmart"+"/"+"Record.txt");
+            File file = new File(Environment.getExternalStorageDirectory()+"/infosmart"+"/"+"Record.csv");
             if (!file.exists()) {
                 file.createNewFile();
             }

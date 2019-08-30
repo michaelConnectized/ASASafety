@@ -4,7 +4,7 @@ package com.asa.safety.safety.object;
 import com.moko.support.entity.DeviceInfo;
 
 public class Smartag extends DeviceInfo {
-    private int remainConnectionTimes = 3;
+    private int remainConnectionTimes = 999;
     private int remainLightingEndTime = 50 - 10;
 
     public void minorRemainConnectionTimes() {

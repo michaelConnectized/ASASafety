@@ -99,10 +99,9 @@ public class MokoSupportManager {
         mokoSupportAdaptor.stopScan();
     }
 
-    public void setLedRequest(int second) {
+    public void setEditTxRequest(int second) {
         mokoSupportAdaptor.initRequest();
-//        mokoSupportAdaptor.setLedRequest(second);
-        mokoSupportAdaptor.setEditTxPowerRequest(-8);
+        mokoSupportAdaptor.setEditTxPowerRequest();
     }
 
     public void setCloseRequest() {
@@ -133,6 +132,7 @@ public class MokoSupportManager {
 
     private void takeSmartagFromQueueAndConnect() {
         if (smartagQueue.isEmpty()) {
+            Log.e("MokoSupportAdaptor1", "Finished Edition!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!=D");
             isTryingConnection = false;
             return;
         } else {
